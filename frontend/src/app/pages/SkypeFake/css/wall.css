@@ -1,5 +1,6 @@
-.container{
+#wall{
   height: 460px;
   width: 1920px;
   background-color: #333333
 }
+header{background-color: gray}

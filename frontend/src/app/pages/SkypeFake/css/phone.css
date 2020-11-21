@@ -1,5 +1,6 @@
-.container{
+#phone{
   height: 740px;
   width: 360px;
   background-color: #333333
 }
+header{background-color: gray}
