@@ -16,23 +16,37 @@
       </header>
       <h4>Max Mustermann</h4>
       <div>Get in contact with:</div>
+      <br>
       <form action="/action_page.php">
-        <input type="checkbox" id="person1" name="person1" value="Schelten">
+        <input type="checkbox" id="person1" name="person" value="Schelten">
         <label for="person1"> Moritz Schelten</label><br>
-        <input type="checkbox" id="person2" name="person2" value="Stolterfoht">
+        <input type="checkbox" id="person2" name="person" value="Stolterfoht">
         <label for="person2"> Traves Stolterfoht</label><br>
-        <input type="checkbox" id="person3" name="vehicle3" value="Buch">
+        <input type="checkbox" id="person3" name="person" value="Buch">
         <label for="person3"> Dennis Buch</label><br>
-        <input type="checkbox" id="person4" name="person4" value="Weidmann">
+        <input type="checkbox" id="person4" name="person" value="Weidmann">
         <label for="person4"> Joshua Weidmann</label><br>
-        <input type="checkbox" id="person5" name="person5" value=Niem">
-        <label for="person5"> Marc-Fabio Pascal Niem.</label><br>
-        <input type="checkbox" id="person6" name="person6" value="Glock">
+        <input type="checkbox" id="person5" name="person" value=Niem">
+        <label for="person5"> Marc-Fabio Pascal Niem</label><br>
+        <input type="checkbox" id="person6" name="person" value="Glock">
         <label for="person6"> Lorenz Glock</label><br><br>
         <input type="submit" value="Submit">
       </form>
+      <p id="result"></p>
+
     </div>
 
   </div>
+  <script>
+    showChecked();
+    function showChecked(){
+      document.getElementById("result").textContent = "Number of people selected: " + document.querySelectorAll("input:checked").length;
+    }
+    document.querySelectorAll("input[name=person]").forEach(i=>{
+      i.onclick = function(){
+        showChecked();
+      }
+    });
+  </script>
 </body>
 </html>
