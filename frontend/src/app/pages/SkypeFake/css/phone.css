@@ -3,11 +3,11 @@
   width: 360px;
   background-color: #333333
 }
-header{background-color: gray;height: 25px;padding-left: 5px}
+header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px}
 
 
 
-.button {
+.button,.buttonsec,.buttonmain {
   width: 150px;
   height: 100px;
   padding: 5px 15px;
@@ -22,33 +22,42 @@ header{background-color: gray;height: 25px;padding-left: 5px}
   box-shadow: 0 9px #999;
 }
 
-.button:active {
+.button:active,.buttonmain:active,.buttonsec:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-#hang:hover,#hang:active {background-color: darkred}
+#hang:hover,#hang:active{background-color: darkred}
 #hang{background-color: red}
 
 #mute,#vid,#part,#rec,#share,#only,#call,#living{background-color: darkgray}
 #mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#mute:active,#vid:active,#part:active,#rec:active,#share:active,#only:active,#call:active,#living:active{background-color: #666666}
-#hang,#mute{margin-top: 50px}
 
 #only{height: 50px;width: 200px;margin: 30px 75px}
-#call,#living{height: 50px;width: 150px;font-size: 20px}
+#call,#living{height: 50px;width: 150px;font-size: 20px;margin: 30px 14px}
+#only,#call,#living{margin-bottom: 25px}
 
 #type {
   background-color: #666666;
   width: 250px;
   height: 50px;
   border-radius: 20px;
-  margin: 30px 50px;
+  margin: 30px 5px;
+  font-size: 20px;
 }
-#emoji{
-  font-size: 10px;
-  background-color: gray;
-  border-radius: 50px;
-  width: 40px;
-  height: 40px;
-  margin: 10px 10px;
+
+
+
+
+
+
+#participants{
+  background-color: #333333;
+  color: white;
+
+}
+
+.chatIconRight {
+  position: relative;
+  right: 0;
 }
