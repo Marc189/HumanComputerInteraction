@@ -19,22 +19,79 @@
       <header>
         SkypeFake
       </header>
-      <button class="button" id="hang">Hang up</button>
-      <button class="button" id="mute">Mute</button>
-      <button class="button" id="vid">Video</button>
-      <button class="button" id="part">Show Part.</button>
-      <button class="button" id="rec">Record Screen</button>
-      <button class="button" id="share">Share Screen</button>
-      <div id="switch">
-        <button class="button" id="only"  onclick="change()">Phone only</button>
+      <img src="media/left-arrow-key.png" style="width:20px;margin: 0 10px;cursor: pointer" onclick="back()">
+      <img id="shareIcon" src="media/how-to-embed-screensharing.png" style="width:20px;float: right;display: none;margin-right: 10px">
+      <img id="recIcon" src="media/rec-icon-png-3.jpg" style="width:13px;float: right;display: none;margin-right: 10px">
+      <img id="muteIcon" src="media/kisspng-sound-icon-microphone-computer-icons-speak-icon-5b08b4225a72b4.9755505615272970583705.png" style="width:18px;float: right;display: none;margin-right: 10px">
+      <div id="remote" style="display:block;">
+        <div id="buttons"style="display: block">
+          <div id="buttons2">
+            <button class="buttonmain" id="hang" >Hang up</button>
+            <button class="buttonmain" id="mute"  onclick="change2('mute');icon('muteIcon')">Mute</button>
+            <button class="buttonmain" id="vid"  onclick="change2('vid');video()" >Video On</button>
+            <button class="buttonsec" id="part" onclick="partis()">Show Part.</button>
+            <button class="buttonsec" id="rec" onclick="change2('rec');icon('recIcon')">Record Screen</button>
+            <button class="buttonsec" id="share"  onclick="change2('share');icon('shareIcon')">Share Screen</button>
+          </div>
+          <div id="switch">
+            <button class="button" id="only"  onclick="change()">Phone Only</button>
+          </div>
+          <div id="switch2" style="display: none">
+            <button class="button" id="living" onclick="change()">Living Room</button>
+            <button class="button" id="call"onclick="change3()">Show Call</button>
+          </div>
+        </div>
+        <div id="chat" style="display:inline-block">
+          <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png" style="width:30px;margin-left: 20px; cursor: pointer" onclick="chat()">
+          <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat()">
+          <img id="data" src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" style="width:30px;cursor: pointer" onclick="chat()">
+          <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
+        </div>
+        <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
       </div>
-      <div id="switch2" style="display: none">
-        <button class="button" id="living" onclick="change()">Living Room</button>
-        <button class="button" id="call">Show call</button>
-      </div>
-      <div id="type">
-        <div id="emoji">Emoji</div>
-        <p>Type message</p>
+
+
+
+      <div id="participants" style="display: none">
+        <h4 style="margin-top: 20px">List of participants</h4>
+        <br>
+        <p><img src="media/blank-profile-picture-973460_1280.webp" alt="Image" width="15" height="15">
+          Max Mustermann <a href="phone_chat.html">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </p>
+        <hr>
+        <p><img src="media/blank-profile-picture-973460_1280.webp" alt="Image" width="15" height="15"> Traves Stolterfoht <a
+          href="phone_chat.html"><img
+          src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+          alt="Image" width="15" height="15">
+        </a>
+        </p>
+        <hr>
+        <p><img src="media/blank-profile-picture-973460_1280.webp" alt="Image" width="15" height="15"> Marc-Fabio Pascal
+          Niemella <a
+            href="phone_chat.html"><img
+            src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+            alt="Image" width="15" height="15">
+          </a>
+        </p>
+        <hr>
+        <p><img src="media/blank-profile-picture-973460_1280.webp" alt="Image" width="15" height="15"> Max Niemella <a
+          href="phone_chat.html"><img
+          src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+          alt="Image" width="15" height="15">
+        </a>
+        </p>
+        <hr>
+        <p><img src="media/blank-profile-picture-973460_1280.webp" alt="Image" width="15" height="15"> Marina Gonzalez
+          <a
+            href="phone_chat.html"><img
+            src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+            alt="Image" width="15" height="15">
+          </a>
+        </p>
+        <hr>
       </div>
     </div>
   </div>

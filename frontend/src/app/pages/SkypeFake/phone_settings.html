@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/phone.css">
+  <link href="css/phone.css" rel="stylesheet">
   <script src="js/phone.js"></script>
   <title>Settings</title>
 
@@ -73,45 +73,78 @@
     .slider.round:before {
       border-radius: 50%;
     }
+
+    .topLine {
+      background-color: lightgrey;
+      border: 5px solid black;
+      padding: 10px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+    .profile{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      border: 2px solid green;
+      float: left;
+      margin-right: 10px;
+    }
+    #settings{
+      float: right;
+      margin-top: 5px;
+
+    }
+    .name{
+      float: left;
+      margin-top: 7px;
+      color: black;
+    }
+
   </style>
 </head>
 <body>
-<div id="phone">
+<div class="container">
+  <div id="phone">
+    <header>
+      SkypeFake
+    </header>
+    <a href="phone_start.html" class="previous">&laquo; Return to menue</a>
+    <h4>Settings</h4>
+    <div class="topLine">
+      <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
+      <div class="name">Max Mustermann</div>
+    </div>
 
-  <a href="phone_start.html" class="previous">&laquo; Return to main menu</a>
-  <h4>Settings</h4>
-  <br>
+    <p>
+      10.03.1980
+    </p>
+    <hr>
+    <p>
+      example@gmail.com
+    </p>
+    <hr>
+    <p>
+      Default video setting:
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </p>
 
-  <p>
-    Max Mustermann
-  </p>
-  <hr>
-  <p>
-    10.03.1980
-  </p>
-  <hr>
-  <p>
-    example@gmail.com
-  </p>
-  <hr>
-  <p>
-    Default video setting:
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-  </p>
+    <hr>
+    <p>
+      Default sound setting:
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </p>
+  </div>
 
-  <hr>
-  <p>
-    Default sound setting:
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-  </p>
 </div>
-
-
 </body>
 </html>
+
+
+
+

@@ -6,7 +6,34 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="css/phone.css">
   <script src="js/phone.js"></script>
-  <title>SkypeFake<</title>
+  <title>SkypeFake</title>
+  <style>
+    .topLine {
+      background-color: lightgrey;
+      border: 5px solid black;
+      padding: 10px;
+      height: 30px;
+    }
+    .profile{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      border: 2px solid green;
+      float: left;
+      margin-right: 10px;
+    }
+    #settings{
+      float: right;
+      margin-top: 5px;
+
+    }
+    .name{
+      float: left;
+      margin-top: 7px;
+      color: black;
+    }
+
+  </style>
 </head>
 <body>
   <div class="container">
@@ -14,10 +41,15 @@
       <header>
         SkypeFake
       </header>
-      <h4>Max Mustermann</h4>
+      <div class="topLine">
+        <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
+        <div class="name">Max Mustermann</div>
+        <a href="phone_settings.html" id="settings"><button type="button">Settings</button></a>
+      </div>
+      <br>
       <div>Get in contact with:</div>
       <br>
-      <form action="/action_page.php">
+      <form action="s.php" method="post">
         <input type="checkbox" id="person1" name="person" value="Schelten">
         <label for="person1"> Moritz Schelten</label><br>
         <input type="checkbox" id="person2" name="person" value="Stolterfoht">
