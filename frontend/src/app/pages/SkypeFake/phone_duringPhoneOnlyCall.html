@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/phone.css">
+  <script src="js/phone.js"></script>
+  <style>
+
+    #videoElement {
+      width: 100%;
+
+    }
+  </style>
+  <title>Skype Fake<</title>
 </head>
 <body>
 
+<div id="phone">
+  <a href="remote.html" class="previous">&laquo; Return to menue</a>
+  <h4>Current call</h4>
+  <br>
+  <video autoplay="true" id="videoElement"/>
+  <video width="100%" height="240" controls>
+    <source src="media/WIN_20201123_16_11_19_Pro%20(1).mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          video.srcObject = stream;
+        })
+        .catch(function (err0r) {
+          console.log("Something went wrong!");
+        });
+    }
+  </script>
+</div>
 </body>
 </html>
+

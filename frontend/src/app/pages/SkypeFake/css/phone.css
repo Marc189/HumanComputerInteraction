@@ -3,6 +3,7 @@
   width: 360px;
   background-color: #333333;
   color: white;
+  margin: 10px;
 }
 header{background-color: gray;height: 25px;padding-left: 5px}
 
@@ -62,3 +63,30 @@ header{background-color: gray;height: 25px;padding-left: 5px}
   position: relative;
   right: 0;
 }
+
+.topLine {
+  background-color: lightgrey;
+  border: 5px solid black;
+  padding: 10px;
+  height: 30px;
+}
+.profile{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid green;
+  float: left;
+  margin-right: 10px;
+}
+#settings{
+  float: right;
+  margin-top: 5px;
+
+}
+.name{
+  float: left;
+  margin-top: 7px;
+  color: black;
+}
+
+
