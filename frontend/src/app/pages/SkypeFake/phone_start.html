@@ -14,7 +14,8 @@
       padding: 10px;
       height: 30px;
     }
-    .profile{
+
+    .profile {
       border-radius: 50%;
       width: 30px;
       height: 30px;
@@ -22,12 +23,14 @@
       float: left;
       margin-right: 10px;
     }
-    #settings{
+
+    #settings {
       float: right;
       margin-top: 5px;
 
     }
-    .name{
+
+    .name {
       float: left;
       margin-top: 7px;
       color: black;
@@ -36,49 +39,57 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div id="phone">
-      <header>
-        SkypeFake
-      </header>
-      <div class="topLine">
-        <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
-        <div class="name">Max Mustermann</div>
-        <a href="phone_settings.html" id="settings"><button type="button">Settings</button></a>
-      </div>
-      <br>
-      <div>Get in contact with:</div>
-      <br>
-      <form action="s.php" method="post">
-        <input type="checkbox" id="person1" name="person" value="Schelten">
-        <label for="person1"> Moritz Schelten</label><br>
-        <input type="checkbox" id="person2" name="person" value="Stolterfoht">
-        <label for="person2"> Traves Stolterfoht</label><br>
-        <input type="checkbox" id="person3" name="person" value="Buch">
-        <label for="person3"> Dennis Buch</label><br>
-        <input type="checkbox" id="person4" name="person" value="Weidmann">
-        <label for="person4"> Joshua Weidmann</label><br>
-        <input type="checkbox" id="person5" name="person" value=Niem">
-        <label for="person5"> Marc-Fabio Pascal Niemella</label><br>
-        <input type="checkbox" id="person6" name="person" value="Glock">
-        <label for="person6"> Lorenz Glock</label><br><br>
-        <input type="submit" value="Submit">
-      </form>
-      <p id="result"></p>
-
+<div class="container">
+  <div id="phone">
+    <header>
+      SkypeFake
+    </header>
+    <div class="topLine">
+      <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
+      <div class="name">Max Mustermann</div>
+      <a href="phone_settings.html" id="settings">
+        <button type="button">Settings</button>
+      </a>
     </div>
+    <br>
+    <div>Get in contact with:</div>
+    <br>
+
+    <input type="checkbox" id="person1" name="person" value="Schelten">
+    <label for="person1"> Moritz Schelten</label><br>
+    <input type="checkbox" id="person2" name="person" value="Stolterfoht">
+    <label for="person2"> Traves Stolterfoht</label><br>
+    <input type="checkbox" id="person3" name="person" value="Buch">
+    <label for="person3"> Dennis Buch</label><br>
+    <input type="checkbox" id="person4" name="person" value="Weidmann">
+    <label for="person4"> Joshua Weidmann</label><br>
+    <input type="checkbox" id="person5" name="person" value=Niem">
+    <label for="person5"> Marc-Fabio Pascal Niemella</label><br>
+    <input type="checkbox" id="person6" name="person" value="Glock">
+    <label for="person6"> Lorenz Glock</label><br><br>
+    <a href="remote.html">
+      <button>Start Call</button>
+    </a>
+
+    <p id="result"></p>
 
   </div>
-  <script>
-    showChecked();
-    function showChecked(){
-      document.getElementById("result").textContent = "Number of people selected: " + document.querySelectorAll("input:checked").length;
+
+</div>
+<script>
+  showChecked();
+
+  function showChecked() {
+    document.getElementById("result").textContent = "Number of people selected: " + document.querySelectorAll("input:checked").length;
+  }
+
+  document.querySelectorAll("input[name=person]").forEach(i = > {
+    i.onclick = function () {
+      showChecked();
     }
-    document.querySelectorAll("input[name=person]").forEach(i=>{
-      i.onclick = function(){
-        showChecked();
-      }
-    });
-  </script>
+  }
+  )
+  ;
+</script>
 </body>
 </html>
