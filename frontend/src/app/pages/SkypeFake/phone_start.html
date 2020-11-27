@@ -7,36 +7,7 @@
   <link rel="stylesheet" href="css/phone.css">
   <script src="js/phone.js"></script>
   <title>SkypeFake</title>
-  <style>
-    .topLine {
-      background-color: lightgrey;
-      border: 5px solid black;
-      padding: 10px;
-      height: 30px;
-    }
 
-    .profile {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      border: 2px solid green;
-      float: left;
-      margin-right: 10px;
-    }
-
-    #settings {
-      float: right;
-      margin-top: 5px;
-
-    }
-
-    .name {
-      float: left;
-      margin-top: 7px;
-      color: black;
-    }
-
-  </style>
 </head>
 <body>
 <div class="container">
@@ -54,7 +25,7 @@
     <br>
     <div>Get in contact with:</div>
     <br>
-
+<div id="checkbox">
     <input type="checkbox" id="person1" name="person" value="Schelten">
     <label for="person1"> Moritz Schelten</label><br>
     <input type="checkbox" id="person2" name="person" value="Stolterfoht">
@@ -66,7 +37,14 @@
     <input type="checkbox" id="person5" name="person" value=Niem">
     <label for="person5"> Marc-Fabio Pascal Niemella</label><br>
     <input type="checkbox" id="person6" name="person" value="Glock">
-    <label for="person6"> Lorenz Glock</label><br><br>
+    <label for="person6"> Lorenz Glock</label><br>
+
+</div>
+    <br>
+    <label for="addName">Add name</label>
+    <input type="text" id="addName" name="addName"><br>
+    <button onclick="addContact()">Add contact</button>
+    <br><br>
     <a href="remote.html">
       <button>Start Call</button>
     </a>
@@ -83,13 +61,25 @@
     document.getElementById("result").textContent = "Number of people selected: " + document.querySelectorAll("input:checked").length;
   }
 
-  document.querySelectorAll("input[name=person]").forEach(i = > {
+  document.querySelectorAll("input[name=person]").forEach(i => {
     i.onclick = function () {
       showChecked();
     }
   }
   )
   ;
+
+  function addContact() {
+    var nodeCheck = document.createElement("INPUT");
+    nodeCheck.type="checkbox";
+    var nodeLabel = document.createElement("LABEL");
+    var newName = document.getElementById("addName").value;
+    var textnode = document.createTextNode(newName);
+    nodeCheck.appendChild(textnode);
+    nodeLabel.appendChild(textnode)
+    document.getElementById("checkbox").appendChild(nodeCheck);
+    document.getElementById("checkbox").appendChild(nodeLabel);
+  }
 </script>
 </body>
 </html>
