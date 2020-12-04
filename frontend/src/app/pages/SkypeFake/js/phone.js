@@ -254,5 +254,24 @@ function settings(){
   }
 }
 
+function edit(id1,id2){
+  var field=document.getElementById(id1);
+  var input = document.getElementById(id2);
+  if (field.style.display==="none") {
+    var x=input.value;
+    field.innerText=x;
+    if(id="name1"){
+      document.getElementById('name3').innerText=x;
+    }
+    field.style.display = "inline-block";
+    input.style.display = "none";
+
+  }else {
+    input.value=field.innerText;
+    field.style.display = "none";
+    input.style.display = "inline-block";
+  }
+}
+
 
 
