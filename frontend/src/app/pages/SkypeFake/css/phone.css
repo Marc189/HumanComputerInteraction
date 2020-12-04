@@ -3,12 +3,13 @@
   width: 360px;
   background-color: #333333;
   color: white;
+  margin: 10px 60px;
 }
 #moveRight{
   padding-left:10px;
 
 }
-header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px}
+header{background-color: gray;height: 25px;padding-left: 5px}
 
 
 
@@ -35,12 +36,25 @@ header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px
 #hang:hover,#hang:active{background-color: darkred}
 #hang{background-color: red}
 
-#mute,#vid,#part,#rec,#share,#only,#call,#living{background-color: darkgray}
-#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#mute:active,#vid:active,#part:active,#rec:active,#share:active,#only:active,#call:active,#living:active{background-color: #666666}
+#mute,#vid,#part,#rec,#share,#only,#call,#living,#sCall,#add,#addContact,#setB{background-color: darkgray}
+#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#sCall:hover,#add:hover,#addContact:hover,#setB:hover{background-color: #666666}
+#mute:active,#vid:active,#part:active,#rec:active,#share:active,#only:active,#call:active,#living:active,#sCall:active,#add:active,#addContact:active,#setB:active{background-color: #666666}
 
 #only{height: 50px;width: 200px;margin: 30px 75px}
-#call,#living{height: 50px;width: 150px;font-size: 20px;margin: 30px 14px}
+#call,#living,#sCall{height: 50px;width: 150px;font-size: 20px;margin: 30px 14px}
 #only,#call,#living{margin-bottom: 25px}
+
+#addContact,#add,#setB{
+  width: 83px;
+  height: 30px;
+  float: right;
+  margin-right: 10px;
+  color: black;
+  font-size: 10px;
+  box-shadow: 0 3px #999;
+  margin-top: 0;
+}
+#setB{margin:10px 0}
 
 #type {
   background-color: #666666;
@@ -50,6 +64,10 @@ header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px
   margin: 30px 5px;
   font-size: 20px;
 }
+
+
+
+
 
 
 
@@ -65,15 +83,14 @@ header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px
 }
 
 .topLine {
-  background-color: lightgrey;
-  border: 5px solid black;
+  background-color: darkslategray;
   padding: 10px;
-  height: 30px;
+  height: 70px;
 }
 .profile{
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border: 2px solid green;
   float: left;
   margin-right: 10px;
@@ -85,8 +102,10 @@ header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px
 }
 .name{
   float: left;
-  margin-top: 7px;
-  color: black;
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+
 }
 
 .personSingle {
@@ -104,4 +123,73 @@ header{background-color: gray;height: 25px;padding-left: 5px;margin-bottom: 10px
 
 .contactPic {
   float: right;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+input{background-color: rgba(88,88,88,0.7);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-left: 40px;
 }

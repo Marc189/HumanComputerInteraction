@@ -1,14 +1,49 @@
+var mic=false;
+var vid=false;
+
+function mic_vid(){
+  if (vid){
+    change2('vid');
+    video();
+  }
+  if(mic){
+    change2('mute');
+    icon('muteIcon');
+  }
+}
+function updateDiv()
+{
+  $("#duringCall").load(" #duringCall > *");
+}
+
+function home(){
+  if(document.getElementById('duringCall').style.display==="none"){
+    document.getElementById('home').style.display="none";
+    document.getElementById('calling').style.display="block";
+    setTimeout("document.getElementById('duringCall').style.display=\"block\";" +
+      "document.getElementById('calling').style.display=\"none\"", 5000);
+
+  }else {
+    updateDiv()
+    document.getElementById('duringCall').style.display="none";
+    document.getElementById('home').style.display="block";
+  }
+
+}
+
+
 function change(){
+  document.getElementById('back').style.display="none"
   if (document.getElementById('switch').style.display ==='none'){
     document.getElementById('switch').style.display = 'block';
     document.getElementById('switch2').style.display = 'none';
+    if(document.getElementById('rec').style.display==="none") change3();
   }else {
     document.getElementById('switch2').style.display = 'block' ;
     document.getElementById('switch').style.display = 'none';
   }
 
 }
-var vid=false;
 function chat(){
   if(document.getElementById('videoElement').style.display==="inline-block"){
     video();
@@ -83,6 +118,7 @@ function change3(){
   var sec = document.getElementsByClassName('buttonsec');
   var main = document.getElementsByClassName('buttonmain');
   if(document.getElementById('call').innerHTML==="Show Call"){
+    document.getElementById('back').style.display="inline-block"
     document.getElementById('call').innerHTML="Remote";
     for(var i=0;i<sec.length;i++) sec[i].style.display='none';
     for(var i=0;i<main.length;i++){
@@ -94,10 +130,12 @@ function change3(){
     document.getElementById('hang').style.marginLeft='5px';
     document.getElementById('video').style.display="block"
   }else {
+    document.getElementById('back').style.display="none";
     showCall();
   }
 }
 function back(){
+  document.getElementById('back').style.display="none"
   if(document.getElementById('buttons').style.display==='none'){
     document.getElementById('buttons').style.display='block';
     document.getElementById('keyboard').style.display='none';
@@ -111,13 +149,13 @@ function back(){
     document.getElementById('participants').style.display = "none";
     document.getElementById('remote').style.display = "block";
   }
-
 }
+
 function showCall(){
   var main = document.getElementsByClassName('buttonmain');
   var sec = document.getElementsByClassName('buttonsec');
   if(sec[0].style.display==='none') {
-    document.getElementById('call').innerHTML = "Show Call";
+    document.getElementById('call').innerHTML = "Show Call"
     for (var i = 0; i < sec.length; i++) sec[i].style.display = 'inline-block';
     for (var i = 0; i < main.length; i++) {
       main[i].style.height = '100px';
@@ -131,6 +169,7 @@ function showCall(){
 function partis(){
   document.getElementById('participants').style.display="block";
   document.getElementById('remote').style.display="none";
+  document.getElementById('back').style.display="inline-block"
 }
 
 
@@ -144,7 +183,7 @@ function video(){
         .then(function (stream) {
           video.srcObject = stream;
         })
-        .catch(function (err0r) {
+        .catch(function () {
           console.log("Something went wrong!");
         });
     }
@@ -175,4 +214,45 @@ function icon(id){
     ic.style.display='none';
   }
 }
+
+function showChecked() {
+  document.getElementById("result").textContent = document.querySelectorAll("input:checked").length +" Selected";
+}
+
+function  addContact(){
+  document.getElementById('add').style.display="inline-block";
+  document.getElementById('addContact').style.display="none";
+  document.getElementById("addName").style.display="block";
+  document.getElementById("addemail").style.display="block";
+
+}
+function add() {
+  var newName = document.getElementById("addName").value;
+  if(newName!=="") {
+    var nodeCheck = document.createElement("INPUT");
+    nodeCheck.type = "checkbox";
+    nodeCheck.setAttribute("class", "person");
+    var nodeLabel = document.createElement("LABEL");
+    var textnode = document.createTextNode(newName);
+    nodeCheck.appendChild(textnode);
+    nodeLabel.appendChild(textnode)
+    document.getElementById("checkbox").appendChild(nodeCheck);
+    document.getElementById("checkbox").appendChild(nodeLabel);
+  }
+  document.getElementById('add').style.display="none";
+  document.getElementById('addContact').style.display="inline-block";
+  document.getElementById("addName").style.display="none";
+  document.getElementById("addemail").style.display="none";
+}
+function settings(){
+  if(document.getElementById('sett').style.display==="block"){
+    document.getElementById('sett').style.display="none";
+    document.getElementById("start").style.display="block";
+  }else{
+    document.getElementById('sett').style.display = "block";
+    document.getElementById("start").style.display = "none";
+  }
+}
+
+
 
