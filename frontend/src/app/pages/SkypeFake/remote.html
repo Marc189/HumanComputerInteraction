@@ -19,106 +19,21 @@
     <header>
       SkypeFake
     </header>
-    <div id="duringCall" style="display:none;">
-      <div style="height: 21px;margin-top: 10px">
-        <img id="back" src="media/left-arrow-key.png" style="width:20px;margin: 0 10px;cursor: pointer;display: none" onclick="back()">
-        <img id="shareIcon" src="media/how-to-embed-screensharing.png"
-             style="width:20px;float: right;display: none;margin-right: 10px">
-        <img id="recIcon" src="media/rec-icon-png-3.jpg" style="width:13px;float: right;display: none;margin-right: 10px">
-        <img id="muteIcon"
-             src="media/kisspng-sound-icon-microphone-computer-icons-speak-icon-5b08b4225a72b4.9755505615272970583705.png"
-             style="width:18px;float: right;display: none;margin-right: 10px">
-      </div>
-      <div id="remote" style="display:block;">
-        <div id="buttons" style="display: block">
-          <div id="buttons2">
-            <button class="buttonmain" id="hang" onclick="home()">Hang up</button>
-            <button class="buttonmain" id="mute" onclick="change2('mute');icon('muteIcon')">Mute</button>
-            <button class="buttonmain" id="vid" onclick="change2('vid');video()">Video On</button>
-            <button class="buttonsec" id="part" onclick="partis()">Show Part.</button>
-            <button class="buttonsec" id="rec" onclick="change2('rec');icon('recIcon')">Record Screen</button>
-            <button class="buttonsec" id="share" onclick="change2('share');icon('shareIcon')">Share Screen</button>
-          </div>
-          <div id="switch" style="display: none">
-            <button class="button" id="only" onclick="change()">Phone Only</button>
-          </div>
-          <div id="switch2">
-            <button class="button" id="living" onclick="change()">Living Room</button>
-            <button class="button" id="call" onclick="change3()">Show Call</button>
-          </div>
-        </div>
-        <div id="chat" style="display:inline-block">
-          <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
-               style="width:30px;margin-left: 20px; cursor: pointer" onclick="chat()">
-          <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat()">
-          <img id="data"
-               src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
-               style="width:30px;cursor: pointer" onclick="chat()">
-          <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg"
-               style="width: 100%; display: none">
-        </div>
-        <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
-      </div>
-      <div id="participants" style="display: none">
-        <h4 style="margin-top: 20px">List of participants</h4>
-        <br>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Max Mustermann</div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Traves Stolterfoht</div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Marc-Fabio Pascal
-            Niemella
-          </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Max Niemella
-          </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Marina Gonzalez
-          </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-
-      </div>
+    <div id="login" style="text-align: center">
+      <h1>Welcome to SkypeFake</h1>
+      <br><br>
+      <h4 style="text-align: left;margin: 10px">Please login:</h4>
+      <br><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Username" title="Please enter Username.">
+      <br><br>
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd"  title="Please enter password." placeholder="Password">
+      <br><br>
+      <input type="button" id="log" value="Login" class="btn btn-info" role="button" onclick="logIN()">
+      <div id="error" style="color:red;"></div>
     </div>
-    <div id="calling" style="display:none; text-align: center">
-      <img src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
-      <p style="font-size: 30px">Calling x...</p>
-    </div>
-    <div id="home">
+    <div id="home" style="display: none">
       <div id="start">
         <div class="topLine">
           <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
@@ -126,8 +41,8 @@
           <button id="setB" class="button" onclick="settings()" style="float: right">Settings</button>
         </div>
         <br>
-<!--        <button id="add" class="button" onclick="add()" style="display:none">Add</button>-->
-<!--        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block">Add contact</button>-->
+        <!--        <button id="add" class="button" onclick="add()" style="display:none">Add</button>-->
+        <!--        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block">Add contact</button>-->
         <p style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</p>
         <div id="checkbox" style="font-size: 20px;height: 470px;width: 360px;overflow-y: auto">
           <input type="text" id="addName" style="display: none" placeholder="Name">
@@ -156,7 +71,7 @@
           <hr>
         </div>
         <p id="result" style="display: inline-block;margin-left: 15px"></p>
-        <button class="button" id="sCall" style="display: inline-block" onclick="home(),mic_vid()">Start Call</button>
+        <button class="button" id="sCall" style="display: inline-block" onclick="calling(),mic_vid()">Start Call</button>
       </div>
       <div id="sett" style="display: none">
         <img src="media/left-arrow-key.png" style="width:20px;margin: 10px;cursor: pointer" onclick="settings()">
@@ -458,6 +373,108 @@
         <hr>
       </div>
       <script>document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});</script>
+    </div>
+    <div id="calling" style="display:none; text-align: center">
+      <div style="height: 600px">
+        <img src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
+        <p style="font-size: 30px">Calling x...</p>
+      </div>
+      <button class="button" id="hang2" onclick="home()" style="float: bottom">Hang up</button>
+    </div>
+    <div id="duringCall" style="display:none;">
+      <div style="height: 21px;margin-top: 10px">
+        <img id="back" src="media/left-arrow-key.png" style="width:20px;margin: 0 10px;cursor: pointer;display: none" onclick="back()">
+        <img id="shareIcon" src="media/how-to-embed-screensharing.png"
+             style="width:20px;float: right;display: none;margin-right: 10px">
+        <img id="recIcon" src="media/rec-icon-png-3.jpg" style="width:13px;float: right;display: none;margin-right: 10px">
+        <img id="muteIcon"
+             src="media/kisspng-sound-icon-microphone-computer-icons-speak-icon-5b08b4225a72b4.9755505615272970583705.png"
+             style="width:18px;float: right;display: none;margin-right: 10px">
+      </div>
+      <div id="remote" style="display:block;">
+        <div id="buttons" style="display: block">
+          <div id="buttons2">
+            <button class="buttonmain" id="hang" onclick="home()">Hang up</button>
+            <button class="buttonmain" id="mute" onclick="change2('mute');icon('muteIcon')">Mute</button>
+            <button class="buttonmain" id="vid" onclick="change2('vid');video()">Video On</button>
+            <button class="buttonsec" id="part" onclick="partis()">Show Part.</button>
+            <button class="buttonsec" id="rec" onclick="change2('rec');icon('recIcon')">Record Screen</button>
+            <button class="buttonsec" id="share" onclick="change2('share');icon('shareIcon')">Share Screen</button>
+          </div>
+          <div id="switch" style="display: none">
+            <button class="button" id="only" onclick="change()">Phone Only</button>
+          </div>
+          <div id="switch2">
+            <button class="button" id="living" onclick="change()">Living Room</button>
+            <button class="button" id="call" onclick="change3()">Show Call</button>
+          </div>
+        </div>
+        <div id="chat" style="display:inline-block">
+          <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
+               style="width:30px;margin-left: 20px; cursor: pointer" onclick="chat()">
+          <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat()">
+          <img id="data"
+               src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
+               style="width:30px;cursor: pointer" onclick="chat()">
+          <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg"
+               style="width: 100%; display: none">
+        </div>
+        <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
+      </div>
+      <div id="participants" style="display: none">
+        <h4 style="margin-top: 20px">List of participants</h4>
+        <br>
+        <div class="personSingle">
+          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
+          <div class="nameParticipant">Max Mustermann</div>
+          <a href="phone_chat.html" class="contactPic">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </div>
+        <hr>
+        <div class="personSingle">
+          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
+          <div class="nameParticipant">Traves Stolterfoht</div>
+          <a href="phone_chat.html" class="contactPic">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </div>
+        <hr>
+        <div class="personSingle">
+          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
+          <div class="nameParticipant">Marc-Fabio Pascal
+            Niemella
+          </div>
+          <a href="phone_chat.html" class="contactPic">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </div>
+        <hr>
+        <div class="personSingle">
+          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
+          <div class="nameParticipant">Max Niemella
+          </div>
+          <a href="phone_chat.html" class="contactPic">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </div>
+        <hr>
+        <div class="personSingle">
+          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
+          <div class="nameParticipant">Marina Gonzalez
+          </div>
+          <a href="phone_chat.html" class="contactPic">
+            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
+                 alt="Image" width="15" height="15">
+          </a>
+        </div>
+        <hr>
+
+      </div>
     </div>
   </div>
 </body>

@@ -15,20 +15,26 @@ function updateDiv()
 {
   $("#duringCall").load(" #duringCall > *");
 }
-
-function home(){
-  if(document.getElementById('duringCall').style.display==="none"){
+function calling(){
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
-    setTimeout("document.getElementById('duringCall').style.display=\"block\";" +
-      "document.getElementById('calling').style.display=\"none\"", 5000);
+    setTimeout("next()", 5000);
 
-  }else {
+
+}
+
+function next(){
+  if (document.getElementById('calling').style.display==="block"){
+    document.getElementById('duringCall').style.display="block";
+    document.getElementById('calling').style.display="none"
+  }
+}
+
+function home() {
     updateDiv()
+    document.getElementById('calling').style.display="none";
     document.getElementById('duringCall').style.display="none";
     document.getElementById('home').style.display="block";
-  }
-
 }
 
 
@@ -271,6 +277,15 @@ function edit(id1,id2){
     field.style.display = "none";
     input.style.display = "inline-block";
   }
+}
+
+function logIN(){
+  var user= document.getElementById('username').value;
+  var pwd= document.getElementById('pwd').value;
+  if(true) {
+    document.getElementById('login').style.display = "none";
+    document.getElementById('home').style.display = "block";
+  } else document.getElementById('error').innerText="Password or Username wrong!";
 }
 
 
