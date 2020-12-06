@@ -20,18 +20,43 @@
       SkypeFake
     </header>
     <div id="login" style="text-align: center">
-      <h1>Welcome to SkypeFake</h1>
+      <h1 class="display-4 font-weight-bold">Welcome on SkypeFake</h1>
+      <img id="back2" src="media/left-arrow-key.png" style="width:20px;margin: 0 10px;cursor: pointer;display: none" onclick="back3()">
       <br><br>
-      <h4 style="text-align: left;margin: 10px">Please login:</h4>
-      <br><br>
-      <label for="username">Username:</label>
-      <input type="text" id="username" placeholder="Username" title="Please enter Username.">
-      <br><br>
-      <label for="pwd">Password:</label>
-      <input type="password" id="pwd"  title="Please enter password." placeholder="Password">
-      <br><br>
-      <input type="button" id="log" value="Login" class="btn btn-info" role="button" onclick="logIN()">
-      <div id="error" style="color:red;"></div>
+      <div id="lo" style="height: 450px">
+        <h4 style="text-align: left;margin: 10px">Please login:</h4>
+        <br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Username" title="Please enter Username.">
+        <br><br>
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd"  title="Please enter password." placeholder="Password">
+        <br><br>
+        <input type="button" id="log" value="Login" class="btn btn-info" role="button" style="margin: 0" onclick="logIN()">
+        <div id="error" style="color:red;"></div>
+      </div>
+      <div id="sig" style="display: none">
+        <br>
+        <h4 style="text-align: left;margin: 10px">Please type in your data:</h4>
+        <br><br>
+        <div style="text-align: right;margin-right: 30px">
+          <label for="username2">Username:</label>
+          <input type="text" id="username2" placeholder="Username" title="Please enter Username.">
+          <br><br>
+          <label for="pwd">Password:</label>
+          <input type="password" id="pwd2"  title="Please enter password." placeholder="Password">
+          <br><br>
+          <label for="name4">Name:</label>
+          <input type="text" id="name4" placeholder="Name" title="Please enter your name.">
+          <br><br>
+          <label for="email">Email:</label>
+          <input type="text" id="email"  title="Please enter your Email." placeholder="Email">
+          <br><br>
+        </div>
+        <input type="button" id="si" value="Submit" class="btn btn-info" role="button" style="margin: 0"  onclick="sign()">
+        <div id="error2" style="color:red;"></div>
+      </div>
+      <div id="s" style="font-family: sans-serif; font-style: italic">Not registered? <div id="sign" style="color: #2196F3;cursor: pointer" onclick="signin()">Click here.</div></div>
     </div>
     <div id="home" style="display: none">
       <div id="start">

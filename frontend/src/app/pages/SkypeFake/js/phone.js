@@ -266,7 +266,7 @@ function edit(id1,id2){
   if (field.style.display==="none") {
     var x=input.value;
     field.innerText=x;
-    if(id="name1"){
+    if(id1==="name1"){
       document.getElementById('name3').innerText=x;
     }
     field.style.display = "inline-block";
@@ -288,5 +288,32 @@ function logIN(){
   } else document.getElementById('error').innerText="Password or Username wrong!";
 }
 
+
+function signin(){
+  document.getElementById("lo").style.display="none";
+  document.getElementById("s").style.display="none";
+  document.getElementById("back2").style.display="block";
+  document.getElementById("sig").style.display="block";
+
+}
+function sign(){
+  var uname=document.getElementById("username2").value;
+  var pwd=document.getElementById("pwd2").value;
+  var name=document.getElementById("name4").value;
+  var email=document.getElementById("email").value;
+  if(uname===""||pwd===""||name===""||email===""){
+    document.getElementById("error2").innerText="Something is missing!";
+  }else {
+
+    back3();
+  }
+}
+
+function back3(){
+  document.getElementById("lo").style.display="block";
+  document.getElementById("s").style.display="block";
+  document.getElementById("back2").style.display="none";
+  document.getElementById("sig").style.display="none";
+}
 
 
