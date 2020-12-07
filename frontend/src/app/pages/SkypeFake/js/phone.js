@@ -15,12 +15,17 @@ function updateDiv()
 {
   $("#duringCall").load(" #duringCall > *");
 }
-function calling(){
+function calling2(){
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
     setTimeout("next()", 5000);
 
-
+}
+function calling(){
+  if(document.querySelectorAll("input:checked").length>0){
+    calling2();
+    mic_vid();
+  }
 }
 
 function next(){
@@ -43,6 +48,8 @@ function change(){
   if (document.getElementById('switch').style.display ==='none'){
     document.getElementById('switch').style.display = 'block';
     document.getElementById('switch2').style.display = 'none';
+    window.open("tv.html", "", "width=1920,height=1080");
+    window.open("wall.html", "", "width=1920,height=460");
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
     document.getElementById('switch2').style.display = 'block' ;
@@ -271,11 +278,17 @@ function edit(id1,id2){
     }
     field.style.display = "inline-block";
     input.style.display = "none";
+    document.getElementById('set').style.display="block";
+    document.getElementById('keyboard3').style.display="none";
+    document.getElementById('line').style.marginBottom="20px";
 
   }else {
     input.value=field.innerText;
     field.style.display = "none";
     input.style.display = "inline-block";
+    document.getElementById('set').style.display="none";
+    document.getElementById('keyboard3').style.display="block";
+    document.getElementById('line').style.marginBottom="65px";
   }
 }
 
@@ -285,6 +298,7 @@ function logIN(){
   if(true) {
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
+    keyhide();
   } else document.getElementById('error').innerText="Password or Username wrong!";
 }
 
@@ -294,6 +308,7 @@ function signin(){
   document.getElementById("s").style.display="none";
   document.getElementById("back2").style.display="block";
   document.getElementById("sig").style.display="block";
+  keyhide();
 
 }
 function sign(){
@@ -314,6 +329,20 @@ function back3(){
   document.getElementById("s").style.display="block";
   document.getElementById("back2").style.display="none";
   document.getElementById("sig").style.display="none";
+  document.getElementById("error2").innerText="";
+  keyhide();
 }
+
+function keyshow(){
+  document.getElementById('keyboard2').style.display="block";
+  document.getElementById('lo').style.height="250px";
+}
+
+function keyhide(){
+  document.getElementById('keyboard2').style.display="none";
+  document.getElementById('lo').style.height="450px";
+}
+
+
 
 

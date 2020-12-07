@@ -27,36 +27,35 @@
         <h4 style="text-align: left;margin: 10px">Please login:</h4>
         <br><br>
         <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Username" title="Please enter Username.">
+        <input type="text" id="username" placeholder="Username" title="Please enter Username." onclick="keyshow()" on>
         <br><br>
         <label for="pwd">Password:</label>
-        <input type="password" id="pwd"  title="Please enter password." placeholder="Password">
+        <input type="password" id="pwd"  title="Please enter password." placeholder="Password" onclick="keyshow()">
         <br><br>
         <input type="button" id="log" value="Login" class="btn btn-info" role="button" style="margin: 0" onclick="logIN()">
         <div id="error" style="color:red;"></div>
       </div>
       <div id="sig" style="display: none">
-        <br>
         <h4 style="text-align: left;margin: 10px">Please type in your data:</h4>
-        <br><br>
         <div style="text-align: right;margin-right: 30px">
           <label for="username2">Username:</label>
-          <input type="text" id="username2" placeholder="Username" title="Please enter Username.">
+          <input type="text" id="username2" placeholder="Username" title="Please enter Username." onclick="keyshow()">
           <br><br>
           <label for="pwd">Password:</label>
-          <input type="password" id="pwd2"  title="Please enter password." placeholder="Password">
+          <input type="password" id="pwd2"  title="Please enter password." placeholder="Password" onclick="keyshow()">
           <br><br>
           <label for="name4">Name:</label>
-          <input type="text" id="name4" placeholder="Name" title="Please enter your name.">
+          <input type="text" id="name4" placeholder="Name" title="Please enter your name." onclick="keyshow()">
           <br><br>
           <label for="email">Email:</label>
-          <input type="text" id="email"  title="Please enter your Email." placeholder="Email">
+          <input type="text" id="email"  title="Please enter your Email." placeholder="Email" onclick="keyshow()">
           <br><br>
         </div>
         <input type="button" id="si" value="Submit" class="btn btn-info" role="button" style="margin: 0"  onclick="sign()">
-        <div id="error2" style="color:red;"></div>
+        <div id="error2" style="color:red;height: 20px"></div>
       </div>
-      <div id="s" style="font-family: sans-serif; font-style: italic">Not registered? <div id="sign" style="color: #2196F3;cursor: pointer" onclick="signin()">Click here.</div></div>
+      <div id="s" style="font-family: sans-serif; font-style: italic;margin-bottom: 20px">Not registered? <div id="sign" style="color: #2196F3;cursor: pointer" onclick="signin()">Click here.</div></div>
+      <img id="keyboard2" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
     </div>
     <div id="home" style="display: none">
       <div id="start">
@@ -96,7 +95,7 @@
           <hr>
         </div>
         <p id="result" style="display: inline-block;margin-left: 15px"></p>
-        <button class="button" id="sCall" style="display: inline-block" onclick="calling(),mic_vid()">Start Call</button>
+        <button class="button" id="sCall" style="display: inline-block" onclick="calling()">Start Call</button>
       </div>
       <div id="sett" style="display: none">
         <img src="media/left-arrow-key.png" style="width:20px;margin: 10px;cursor: pointer" onclick="settings()">
@@ -379,23 +378,26 @@
             <option value="ZW">Zimbabwe</option>
           </select>
         </div>
-        <hr>
-        <div style="margin-left: 10px">
-          <label>Default video setting:</label>
-          <label class="switch">
-            <input id="v" type="checkbox" onclick="vid=!vid">
-            <span class="slider round"></span>
-          </label>
+        <hr id="line">
+        <div id="set">
+          <div style="margin-left: 10px">
+            <label>Default video setting:</label>
+            <label class="switch">
+              <input id="v" type="checkbox" onclick="vid=!vid">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <hr>
+          <div style="margin-left: 10px">
+            <label>Default audio setting:</label>
+            <label class="switch">
+              <input id="m" type="checkbox" onclick="mic=!mic">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <hr>
         </div>
-        <hr>
-        <div style="margin-left: 10px">
-          <label>Default audio setting:</label>
-          <label class="switch">
-            <input id="m" type="checkbox" onclick="mic=!mic">
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <hr>
+        <img id="keyboard3" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
       </div>
       <script>document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});</script>
     </div>
@@ -441,8 +443,7 @@
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat()">
-          <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg"
-               style="width: 100%; display: none">
+          <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
         </div>
         <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
       </div>
