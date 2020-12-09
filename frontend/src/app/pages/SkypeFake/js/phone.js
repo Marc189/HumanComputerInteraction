@@ -1,3 +1,4 @@
+'use strict';
 var mic=false;
 var vid=false;
 
@@ -8,24 +9,24 @@ var user=[["Muster80","1234","Max Mustermann","m_muster@gmail.com","1980-10-03"]
 var part;
 
 
-// function loaduser(){
-//   $.ajax({
-//     url: 'user.csv',
-//     dataType: 'text',
-//   }).done(successFunction);
-// }
-//
-// function successFunction(data) {
-//   var allRows = data.split(/\r?\n|\r/);
-//   for (var singleRow = 0; singleRow < allRows.length-1; singleRow++) {
-//     var rowCells = allRows[singleRow].split(',');
-//     var us=[];
-//     for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-//       us.push(rowCells[rowCell]);
-//     }
-//     user.push(us)
-//   }
-// }
+function loaduser(){
+  $.ajax({
+    url: 'user.csv',
+    dataType: 'text',
+  }).done(successFunction);
+}
+
+function successFunction(data) {
+  var allRows = data.split(/\r?\n|\r/);
+  for (var singleRow = 0; singleRow < allRows.length-1; singleRow++) {
+    var rowCells = allRows[singleRow].split(',');
+    var us=[];
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      us.push(rowCells[rowCell]);
+    }
+    user.push(us)
+  }
+}
 
 
 
@@ -140,6 +141,27 @@ function chat(type){
       document.getElementById('group').style.display="block";
       document.getElementById('name6').style.display= 'none';
     }
+}
+
+function change4(type){
+  switch (type){
+    case "emoji":
+      document.getElementById('em2').style.display= 'block';
+      document.getElementById('keyboard4').style.display= 'none';
+      document.getElementById('dat2').style.display= 'none';
+      break;
+    case "text":
+      document.getElementById('keyboard4').style.display= 'block';
+      document.getElementById('em2').style.display= 'none';
+      document.getElementById('dat2').style.display= 'none';
+      break;
+    case "data":
+      document.getElementById('dat2').style.display= 'block';
+      document.getElementById('keyboard4').style.display= 'none';
+      document.getElementById('em2').style.display= 'none';
+      break;
+  }
+
 }
 
 function chat2(name){
@@ -403,6 +425,14 @@ function showCall() {
     if (true) {
       document.getElementById('login').style.display = "none";
       document.getElementById('home').style.display = "block";
+      var cont=document.getElementsByClassName('person');
+      for(var i=0;i<cont.length;i++){
+        if (cont[i].value===document.getElementById('name').innerText){
+          cont[i].value="Elon Musk";
+          // var id=cont[i].id
+          // $('label[for=id]').innerText="Elon Musk";
+        }
+      }
       keyhide();
     } else document.getElementById('error').innerText = "Password or Username wrong!";
   }
@@ -426,6 +456,15 @@ function sign() {
     document.getElementById("error2").innerText = "Something is missing!";
   } else {
     user+=[uname,pwd,name,email,date];
+    // var data= uname+","+pwd+","+name+","+email+","+date
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onload = function () {
+    //   if (xhttp.readyState === 4 && xhttp.status === 200) {
+    //     console.log(this.responseText);
+    //   }
+    // };
+    // xhttp.open('POST','Writer');
+    // xhttp.send(data);
     back3();
   }
 }

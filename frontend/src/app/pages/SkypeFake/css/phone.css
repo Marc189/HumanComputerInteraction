@@ -18,7 +18,7 @@ h1 {
 
 
 
-.button,.buttonsec,.buttonmain{
+.button,.buttonsec,.buttonmain,.button2{
   width: 150px;
   height: 100px;
   padding: 5px 15px;
@@ -33,7 +33,7 @@ h1 {
   box-shadow: 0 9px #999;
 }
 
-.button:active,.buttonmain:active,.buttonsec:active {
+.button:active,.buttonmain:active,.buttonsec:active,.button2:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -41,13 +41,14 @@ h1 {
 #hang:hover,#hang:active,#hang2:hover,#hang2:active{background-color: darkred}
 #hang,#hang2{background-color: red}
 
-#mute,#vid,#part,#rec,#share,#only,#call,#living,#sCall,#add,#addContact,#setB{background-color: darkgray}
-#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#sCall:hover,#add:hover,#addContact:hover,#setB:hover{background-color: #666666}
-#mute:active,#vid:active,#part:active,#rec:active,#share:active,#only:active,#call:active,#living:active,#sCall:active,#add:active,#addContact:active,#setB:active{background-color: #666666}
+#mute,#vid,#part,#rec,#share,#only,#call,#living,#sCall,#add,#addContact,#setB,.button2{background-color: darkgray}
+#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#sCall:hover,#add:hover,#addContact:hover,#setB:hover,.button2:hover{background-color: #666666}
+#mute:active,#vid:active,#part:active,#rec:active,#share:active,#only:active,#call:active,#living:active,#sCall:active,#add:active,#addContact:active,#setB:active,.button2:active{background-color: #666666}
 
 #only,#hang2{height: 50px;width: 200px;margin: 30px 75px}
 #call,#living,#sCall{height: 50px;width: 150px;font-size: 20px;margin: 30px 14px}
 #only,#call,#living{margin-bottom: 25px}
+.button2{height: 80px;width: 120px; border-radius: 50px;margin: 10px}
 
 #addContact,#add,#setB{
   width: 83px;

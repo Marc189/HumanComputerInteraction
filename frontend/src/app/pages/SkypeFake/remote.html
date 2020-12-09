@@ -14,7 +14,7 @@
   <script src="js/phone.js"></script>
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked()">
+<body onload="showChecked(),loaduser()">
   <div id="phone">
     <header>
       SkypeFake
@@ -87,8 +87,8 @@
           <input type="checkbox" id="person4" class="person" value="Joshua Weidmann">
           <label for="person4"> Joshua Weidmann</label><br>
           <hr>
-          <input type="checkbox" id="person5" class="person" value="Marc-Fabio Niemella">
-          <label for="person5"> Marc-Fabio Niemella</label><br>
+          <input type="checkbox" id="person5" class="person" value="Marc Niemella">
+          <label for="person5"> Marc Niemella</label><br>
           <hr>
           <input type="checkbox" id="person6" class="person" value="Lorenz Glock">
           <label for="person6"> Lorenz Glock</label><br>
@@ -464,8 +464,11 @@
                style="width:30px;cursor: pointer" onclick="chat('data')">
           <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
           <img id="em" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
-          <div id="dat" style="background-color: #666666;height: 217px;width: 360px ;display: none">
-
+          <div id="dat" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
+            <button class="button2" >Doc.</button>
+            <button class="button2" >Audio</button>
+            <button class="button2" >Camera</button>
+            <button class="button2" >Galerie</button>
           </div>
         </div>
         <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
@@ -489,8 +492,8 @@
           <hr>
           <div class="personSingle">
             <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Marc-Fabio Niemella</div>
-              <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marc-Fabio Niemella')">
+            <div class="nameParticipant">Marc Niemella</div>
+              <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marc Niemella')">
           </div>
           <hr>
           <div class="personSingle">
@@ -514,12 +517,17 @@
             </div>
           </div>
           <div style="display:inline-block">
-            <img src="media/toppng.com-emoji-icon-white-980x980.png"
-                 style="width:30px;margin-left: 15px; cursor: pointer">
-            <input type="text" id="type2" name="type" style="margin-bottom: 5px" placeholder="Type Message...">
-            <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
-                 style="width:30px;cursor: pointer">
-            <img src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
+            <img src="media/toppng.com-emoji-icon-white-980x980.png" onclick="change4('emoji')" style="width:30px;margin-left: 15px; cursor: pointer">
+            <input type="text" id="type2" name="type" style="margin-bottom: 5px" onclick="change4('text')" placeholder="Type Message...">
+            <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" onclick="change4('data')" style="width:30px;cursor: pointer">
+            <img id="keyboard4" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
+            <img id="em2" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
+            <div id="dat2" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
+              <button class="button2" >Doc.</button>
+              <button class="button2" >Audio</button>
+              <button class="button2" >Camera</button>
+              <button class="button2" >Galerie</button>
+            </div>
           </div>
         </div>
       </div>
