@@ -16,7 +16,7 @@
 
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked()">
+<body onload="showChecked(),loaduser()">
   <div id="phone">
     <header>
       SkypeFake
@@ -39,7 +39,7 @@
       </div>
       <div id="sig" style="display: none">
         <h4 style="text-align: left;margin: 10px">Please type in your data:</h4>
-        <div style="text-align: right;margin-right: 30px">
+        <div style="text-align: right;margin-right: 40px">
           <label for="username2">Username:</label>
           <input type="text" id="username2" placeholder="Username" title="Please enter Username." onclick="keyshow()">
           <br><br>
@@ -48,6 +48,9 @@
           <br><br>
           <label for="name4">Name:</label>
           <input type="text" id="name4" placeholder="Name" title="Please enter your name." onclick="keyshow()">
+          <br><br>
+          <label for="date2" >Birth-Date:</label>
+          <input type="date" id="date2" style="width: 178px">
           <br><br>
           <label for="email">Email:</label>
           <input type="text" id="email"  title="Please enter your Email." placeholder="Email" onclick="keyshow()">
@@ -63,7 +66,7 @@
       <div id="start">
         <div class="topLine">
           <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
-          <div id="name3" class="name">Max Mustermann</div>
+          <div id="name3" class="name"></div>
           <button id="setB" class="button" onclick="settings()" style="float: right">Settings</button>
         </div>
         <br>
@@ -74,25 +77,25 @@
           <input type="text" id="addName" style="display: none" placeholder="Name">
           <input type="text" id="addemail" style="display: none" placeholder="Email">
           <hr>
-          <input type="checkbox" id="person1" class="person" value="Schelten">
+          <input type="checkbox" id="person1" class="person" value="Moritz Schelten">
           <label for="person1"> Moritz Schelten</label><br>
           <hr>
-          <input type="checkbox" id="person2" class="person" value="Stolterfoht">
+          <input type="checkbox" id="person2" class="person" value="Traves Stolterfoht">
           <label for="person2"> Traves Stolterfoht</label><br>
           <hr>
-          <input type="checkbox" id="person3" class="person" value="Buch">
+          <input type="checkbox" id="person3" class="person" value="Dennis Buch">
           <label for="person3"> Dennis Buch</label><br>
           <hr>
-          <input type="checkbox" id="person4" class="person" value="Weidmann">
+          <input type="checkbox" id="person4" class="person" value="Joshua Weidmann">
           <label for="person4"> Joshua Weidmann</label><br>
           <hr>
-          <input type="checkbox" id="person5" class="person" value=Niem">
-          <label for="person5"> Marc-Fabio Pascal Niemella</label><br>
+          <input type="checkbox" id="person5" class="person" value="Marc Niemella">
+          <label for="person5"> Marc Niemella</label><br>
           <hr>
-          <input type="checkbox" id="person6" class="person" value="Glock">
+          <input type="checkbox" id="person6" class="person" value="Lorenz Glock">
           <label for="person6"> Lorenz Glock</label><br>
           <hr>
-          <input type="checkbox" id="person7" class="person" value="Gonzalez">
+          <input type="checkbox" id="person7" class="person" value="Marina Gonzalez">
           <label for="person7"> Marina Gonzalez</label><br>
           <hr>
         </div>
@@ -103,7 +106,7 @@
         <img src="media/left-arrow-key.png" style="width:20px;margin: 10px;cursor: pointer" onclick="settings()">
         <div class="topLine">
           <img class="profile" src="media/istockphoto-1045886560-612x612.jpg">
-          <div class="name" id="name" style="display: inline-block">Max Mustermann</div>
+          <div class="name" id="name" style="display: inline-block"></div>
           <input type="text" id="name2" style="display: none;margin: 10px 0">
           <img class="edit" src="media/kisspng-computer-icons-editing-vector-graphics-editor-edit-pen-write-icon-5ab06a247f5929.0215497815215109485216.png" style="margin: 15px 10px" onclick="edit('name','name2')">
         </div>
@@ -111,17 +114,17 @@
         <hr>
         <div style="margin-left: 10px">
           <label for="uname" >Username:</label>
-          <div id="uname" style="display: inline-block">Muster80</div>
+          <div id="uname" style="display: inline-block"></div>
         </div>
         <hr>
         <div style="margin-left: 10px">
           <label for="date" >Birth-Date:</label>
-          <input type="date" id="date" value="1980-10-03">
+          <input type="date" id="date">
         </div>
         <hr>
         <div style="margin-left: 10px">
           <label for="mail" >E-mail:</label>
-          <div id="mail" style="display: inline-block">m_muster@gmail.com</div>
+          <div id="mail" style="display: inline-block"></div>
           <input type="text" id="mail2" style="display: none">
           <img class="edit" src="media/kisspng-computer-icons-editing-vector-graphics-editor-edit-pen-write-icon-5ab06a247f5929.0215497815215109485216.png" onclick="edit('mail','mail2')">
         </div>
@@ -401,12 +404,16 @@
         </div>
         <img id="keyboard3" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
       </div>
-      <script>document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});</script>
+      <script>
+        document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});
+      </script>
     </div>
     <div id="calling" style="display:none; text-align: center">
-      <div style="height: 600px">
-        <img src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
-        <p style="font-size: 30px">Calling x...</p>
+      <div id="c" style="height: 600px">
+        <div id="pict" style="margin-bottom: 20px;text-align: center">
+          <img id="pic" src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
+        </div>
+        <p id="names" style="font-size: 25px"></p>
       </div>
       <button class="button" id="hang2" onclick="home()" style="float: bottom">Hang up</button>
     </div>
@@ -420,7 +427,12 @@
              src="media/kisspng-sound-icon-microphone-computer-icons-speak-icon-5b08b4225a72b4.9755505615272970583705.png"
              style="width:18px;float: right;display: none;margin-right: 10px">
       </div>
-      <div id="remote" style="display:block;">
+      <div id="remote" style="display:block">
+        <div id="vi" style="height: 370px;display: none">
+          <video id="video" width="360" height="270">
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4" type="video/mp4">
+          </video>
+        </div>
         <div id="buttons" style="display: block">
           <div id="buttons2">
             <button class="buttonmain" id="hang" onclick="home()">Hang up</button>
@@ -438,70 +450,88 @@
             <button class="button" id="call" onclick="change3()">Show Call</button>
           </div>
         </div>
+        <div id="chat2" style="height: 372px;display: none">
+          <h4 id="group">Group Chat</h4>
+          <div class="topLine" style="margin-top: 10px" id="name6" style="display:none;">
+            <img class="profile" src="media/hiclipart.com.png">
+            <div class="name" id="name5"></div>
+          </div>
+        </div>
         <div id="chat" style="display:inline-block">
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
-               style="width:30px;margin-left: 20px; cursor: pointer" onclick="chat()">
-          <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat()">
+               style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
+          <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
-               style="width:30px;cursor: pointer" onclick="chat()">
+               style="width:30px;cursor: pointer" onclick="chat('data')">
           <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
+          <img id="em" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
+          <div id="dat" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
+            <button class="button2" >Doc.</button>
+            <button class="button2" >Audio</button>
+            <button class="button2" >Camera</button>
+            <button class="button2" >Galerie</button>
+          </div>
         </div>
         <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
       </div>
       <div id="participants" style="display: none">
-        <h4 style="margin-top: 20px">List of participants</h4>
-        <br>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Max Mustermann</div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Traves Stolterfoht</div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Marc-Fabio Pascal
-            Niemella
+        <div id="parti">
+          <h4 style="margin-top: 20px">Participants:</h4>
+          <br>
+          <hr>
+          <div class="personSingle">
+            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
+            <div class="nameParticipant">Moriz Schelten</div>
+            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Moritz Schelten')" >
           </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Max Niemella
+          <hr>
+          <div class="personSingle">
+            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
+            <div class="nameParticipant">Traves Stolterfoht</div>
+            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Traves Stolterfoht')">
           </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
-        </div>
-        <hr>
-        <div class="personSingle">
-          <img src="media/blank-profile-picture-973460_1280.webp" class="profilePic" alt="Image" width="15" height="15">
-          <div class="nameParticipant">Marina Gonzalez
+          <hr>
+          <div class="personSingle">
+            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
+            <div class="nameParticipant">Marc Niemella</div>
+              <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marc Niemella')">
           </div>
-          <a href="phone_chat.html" class="contactPic">
-            <img src="media/96761373-chat-icon-white-icon-with-shadow-on-transparent-background.jpg" class="chatIconRight"
-                 alt="Image" width="15" height="15">
-          </a>
+          <hr>
+          <div class="personSingle">
+            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
+            <div class="nameParticipant">Max Niemella</div>
+            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Max Niemella')">
+          </div>
+          <hr>
+          <div class="personSingle">
+            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
+            <div class="nameParticipant">Marina Gonzalez</div>
+            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marina Gonzalez')">
+          </div>
+          <hr>
         </div>
-        <hr>
-
+        <div id="chat3" style="display: none">
+          <div style="height: 372px">
+            <div class="topLine" style="margin-top: 10px">
+              <img class="profile" src="media/hiclipart.com.png">
+              <div class="name" id="nam"></div>
+            </div>
+          </div>
+          <div style="display:inline-block">
+            <img src="media/toppng.com-emoji-icon-white-980x980.png" onclick="change4('emoji')" style="width:30px;margin-left: 15px; cursor: pointer">
+            <input type="text" id="type2" name="type" style="margin-bottom: 5px" onclick="change4('text')" placeholder="Type Message...">
+            <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" onclick="change4('data')" style="width:30px;cursor: pointer">
+            <img id="keyboard4" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
+            <img id="em2" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
+            <div id="dat2" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
+              <button class="button2" >Doc.</button>
+              <button class="button2" >Audio</button>
+              <button class="button2" >Camera</button>
+              <button class="button2" >Galerie</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
