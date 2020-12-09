@@ -33,13 +33,35 @@
     firebase.initializeApp(firebaseConfig);
 
     var myName = prompt("Enter your name");
+
     function sendMsg() {
       var message = document.getElementById("message").value;
       firebase.database().ref("message").push().set({
         "sender": myName,
         "message": message
       });
+      // submitForm();
+
       return false;
+    }
+
+    firebase.database().ref("message").on("child_added", function (snapshot) {
+      var html = "";
+      html += "<li>";
+
+      html += snapshot.val().sender + ": " + snapshot.val().message;
+      html += "</li>";
+
+      document.getElementById("messages").innerHTML += html;
+    });
+
+    function submitForm() {
+      // Get the first form with the name
+      // Hopefully there is only one, but there are more, select the correct index
+      var frm = document.getElementById("message");
+      frm.submit(); // Submit
+      frm.reset();  // Reset
+      return false; // Prevent page refresh
     }
   </script>
   <title>SkypeFake</title>
@@ -53,10 +75,10 @@
 <!--  </div>-->
 <!--</div>-->
 <form onsubmit="return sendMsg();">
-  <input id="message" placeholder="Enter massage">
+  <input id="message" placeholder="Enter message">
 
   <input type="submit">
 </form>
-
+<ul id="messages"></ul>
 </body>
 </html>
