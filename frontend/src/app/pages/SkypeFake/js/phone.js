@@ -429,8 +429,7 @@ function showCall() {
       for(var i=0;i<cont.length;i++){
         if (cont[i].value===document.getElementById('name').innerText){
           cont[i].value="Elon Musk";
-          // var id=cont[i].id
-          // $('label[for=id]').innerText="Elon Musk";
+          document.querySelector("label[for='" + cont[i].id + "']").innerText="Elon Musk";
         }
       }
       keyhide();
