@@ -11,30 +11,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/wall.css">
   <script src="js/wall.js"></script>
-  <title>SkypeFake<</title>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBq8U_Iss38guu-VrHPPui59i6vW8uE5q8",
+      authDomain: "chatbot-2bdfe.firebaseapp.com",
+      projectId: "chatbot-2bdfe",
+      storageBucket: "chatbot-2bdfe.appspot.com",
+      messagingSenderId: "1018016749004",
+      appId: "1:1018016749004:web:c5c22320c40ac31223f969"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var myName = prompt("Enter your name");
+    function sendMsg() {
+      var message = document.getElementById("message").value;
+      firebase.database().ref("message").push().set({
+        "sender": myName,
+        "message": message
+      });
+      return false;
+    }
+  </script>
+  <title>SkypeFake</title>
 </head>
 <body>
- <div class="container">
-   <div id="wall">
-     <header>
-       SkypeFake
-     </header>
-     <div class="flex-container">
-       <div>1</div>
-       <div>2</div>
-       <div>3</div>
-       <div>4</div>
-       <div>5</div>
-       <div>6</div>
-       <div>7</div>
-       <div>8</div>
-       <div>9</div>
-       <div>10</div>
-       <div>11</div>
-       <div>12</div>
-     </div>
-   </div>
- </div>
+<!--<div class="container">-->
+<!--  <div id="wall">-->
+<!--    <header>-->
+<!--      SkypeFake-->
+<!--    </header>-->
+<!--  </div>-->
+<!--</div>-->
+<form onsubmit="return sendMsg();">
+  <input id="message" placeholder="Enter massage">
+
+  <input type="submit">
+</form>
 
 </body>
 </html>
