@@ -11,14 +11,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/wall.css">
   <script src="js/wall.js"></script>
+  <script src="js/phone.js"></script>
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -31,8 +28,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
-    var myName = prompt("Enter your name");
+    var myName = userN;
 
     function sendMsg() {
       var message = document.getElementById("message").value;
@@ -40,17 +36,16 @@
         "sender": myName,
         "message": message
       });
-      // submitForm();
-
+      //submitForm();
       return false;
     }
 
     firebase.database().ref("message").on("child_added", function (snapshot) {
       var html = "";
-      html += "<li>";
+      html += "<p>";
 
       html += snapshot.val().sender + ": " + snapshot.val().message;
-      html += "</li>";
+      html += "</p>";
 
       document.getElementById("messages").innerHTML += html;
     });
@@ -59,7 +54,6 @@
       // Get the first form with the name
       // Hopefully there is only one, but there are more, select the correct index
       var frm = document.getElementById("message");
-      frm.submit(); // Submit
       frm.reset();  // Reset
       return false; // Prevent page refresh
     }
@@ -67,18 +61,18 @@
   <title>SkypeFake</title>
 </head>
 <body>
-<!--<div class="container">-->
-<!--  <div id="wall">-->
-<!--    <header>-->
-<!--      SkypeFake-->
-<!--    </header>-->
-<!--  </div>-->
-<!--</div>-->
-<form onsubmit="return sendMsg();">
-  <input id="message" placeholder="Enter message">
+<div class="container">
+  <div id="wall">
+    <header>
+      SkypeFake
+    </header>
+    <form onsubmit="return sendMsg();">
+      <input id="message" placeholder="Enter message">
+      <input type="submit" value="Send message" style="background-color: green">
+    </form>
+    <div id="messages"></div>
+  </div>
+</div>
 
-  <input type="submit">
-</form>
-<ul id="messages"></ul>
 </body>
 </html>
