@@ -61,16 +61,12 @@
   <title>SkypeFake</title>
 </head>
 <body>
-<div class="container">
+<div>
   <div id="wall">
     <header>
       SkypeFake
     </header>
-    <form onsubmit="return sendMsg();">
-      <input id="message" placeholder="Enter message">
-      <input type="submit" value="Send message" style="background-color: green">
-    </form>
-    <div id="messages"></div>
+    <div id="messages" style="height: 300px; overflow-y: auto"></div>
   </div>
 </div>
 

@@ -63,7 +63,7 @@
   </script>
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked()">
+<body onload="showChecked(),load()">
   <div id="phone">
     <header>
       SkypeFake
@@ -511,7 +511,7 @@
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
                style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
           <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
-          <button class="button" id="send" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;" onclick="sendMsgSingle()"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
+          <button class="button" id="send" style="display: none" onclick="sendMsgSingle()"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat('data')">
@@ -543,7 +543,7 @@
           <div style="display:inline-block">
             <img src="media/toppng.com-emoji-icon-white-980x980.png" onclick="change4('emoji')" style="width:30px;margin-left: 15px; cursor: pointer">
             <input type="text" id="type2" name="type" style="margin-bottom: 5px" onclick="change4('text')" placeholder="Type Message...">
-            <button class="button" id="send2" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
+            <button class="button" id="send2" style="display: none"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
             <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" onclick="change4('data')" style="width:30px;cursor: pointer">
             <img id="keyboard4" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
             <img id="em2" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">

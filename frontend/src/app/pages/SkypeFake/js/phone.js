@@ -11,6 +11,7 @@ var user=[
 var part;
 
 
+
 function loaduser(){
   $.ajax({
     url: 'user.csv',
@@ -92,20 +93,23 @@ function home() {
   document.getElementById('home').style.display="block";
 }
 
-
+var tv;
+var wall;
 function change(){
   document.getElementById('back').style.display="none"
+
   if (document.getElementById('switch').style.display ==='none'){
     document.getElementById('switch').style.display = 'block';
     document.getElementById('switch2').style.display = 'none';
-    window.open("tv.html", "", "width=1920,height=1080");
-    window.open("wall.html", "", "width=1920,height=460");
+    tv=window.open("tv.html", "", "width=1453,height=896");
+    wall=window.open("wall.html", "", "width=1453,height=431");
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
+    tv.close()
+    wall.close();
     document.getElementById('switch2').style.display = 'block' ;
     document.getElementById('switch').style.display = 'none';
   }
-
 }
 function chat(type){
   if(document.getElementById('videoElement').style.display==="inline-block"){
