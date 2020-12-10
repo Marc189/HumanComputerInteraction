@@ -11,7 +11,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/phone.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="artyom.window.min.js"></script>
   <script src="js/phone.js"></script>
   <script src="js/tv.js"></script>
   <script src="js/wall.js"></script>
@@ -32,11 +31,12 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    document.getElementById("username").innerText="dfa";
 
-    var myName = document.getElementById("username").innerText;
+
     function sendMsgSingle() {
+      var myName = document.getElementById('uname').innerText;
       var message = document.getElementById("type").value;
+      document.getElementById('type').value="";
       firebase.database().ref("message").push().set({
         "sender": myName,
         "message": message
@@ -505,16 +505,13 @@
             <img class="profile" src="media/hiclipart.com.png">
             <div class="name" id="name5"></div>
           </div>
-          <form onsubmit="return sendMsgSingle();">
-            <input type="submit" value="Send message" style="background-color: green">
-          </form>
-          <div id="messages"></div>
+          <div id="messages" style="height: 320px;overflow-y: auto"></div>
         </div>
         <div id="chat" style="display:inline-block">
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
                style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
           <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
-          <button class="button" id="send" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
+          <button class="button" id="send" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;" onclick="sendMsgSingle()"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat('data')">
