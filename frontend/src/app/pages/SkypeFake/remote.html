@@ -120,7 +120,7 @@
         <hr>
         <div style="margin-left: 10px">
           <label for="date" >Birth-Date:</label>
-          <input type="date" id="date">
+          <input type="date" id="date" onchange="changeuser(document.getElementById('name').innerText)">
         </div>
         <hr>
         <div style="margin-left: 10px">
@@ -417,6 +417,7 @@
         <p id="names" style="font-size: 25px"></p>
       </div>
       <button class="button" id="hang2" onclick="home()" style="float: bottom">Hang up</button>
+      <button class="button" id="accept" onclick="next()" style="float: bottom">Accept</button>
     </div>
     <div id="duringCall" style="display:none;">
       <div style="height: 21px;margin-top: 10px">

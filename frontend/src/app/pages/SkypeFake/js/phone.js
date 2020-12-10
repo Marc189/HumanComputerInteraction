@@ -398,7 +398,7 @@ function settings() {
 function edit(id1, id2) {
   var field = document.getElementById(id1);
   var input = document.getElementById(id2);
-  var user= document.getElementById("name");
+  var user= document.getElementById("name").innerText;
   if (field.style.display === "none") {
     var x = input.value;
     field.innerText = x;
@@ -410,6 +410,7 @@ function edit(id1, id2) {
     document.getElementById('set').style.display = "block";
     document.getElementById('keyboard3').style.display = "none";
     document.getElementById('line').style.marginBottom = "20px";
+    changeuser(user);
 
   } else {
     input.value = field.innerText;
@@ -422,7 +423,14 @@ function edit(id1, id2) {
 }
 
 function changeuser(name){
-
+  for (var i=0;i<user.length;i++) {
+    if (user[i][2] === name) {
+      user[i][2]=document.getElementById('name').innerText;
+      user[i][3]=document.getElementById('mail').innerText;
+      user[i][4]=document.getElementById('date').value;
+    }
+  }
+  console.log(user);
 }
 
 function logIN() {
@@ -445,7 +453,17 @@ function logIN() {
     document.getElementById('home').style.display = "block";
     changeContacts();
     keyhide();
+    if(document.getElementById('uname').innerText==="Muster80"){
+      setTimeout("marcCalls()", 5000);
+    }
   } else document.getElementById('error').innerText = "Password or Username wrong!";
+}
+
+function marcCalls(){
+    document.getElementById("names").innerText="Marc Niemella is calling";
+    document.getElementById('home').style.display="none";
+    document.getElementById('calling').style.display="block";
+    mic_vid();
 }
 
 function logout(){
