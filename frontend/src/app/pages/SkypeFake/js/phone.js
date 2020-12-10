@@ -445,9 +445,10 @@ function changeuser(name) {
   }
   console.log(user);
 }
-
+var msg;
 var usn;
 function logIN() {
+  //var msg = document.getElementById('message').innerText;
   var usr = document.getElementById('username').value;
   var pwd = document.getElementById('pwd').value;
   usn = document.getElementById('username').innerText;

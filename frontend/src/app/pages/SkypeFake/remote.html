@@ -14,7 +14,52 @@
   <script src="js/phone.js"></script>
   <script src="js/tv.js"></script>
   <script src="js/wall.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDUfSVEgE_GpOegzsAfjoJuQVzq0FUtYaM",
+      authDomain: "chat1-b0b4e.firebaseapp.com",
+      databaseURL: "https://chat1-b0b4e-default-rtdb.firebaseio.com",
+      projectId: "chat1-b0b4e",
+      storageBucket: "chat1-b0b4e.appspot.com",
+      messagingSenderId: "648930876414",
+      appId: "1:648930876414:web:72253f720ea3cce6e0beaf",
+      measurementId: "G-MDBPQ0768C"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    document.getElementById("username").innerText="dfa";
 
+    var myName = document.getElementById("username").innerText;
+    function sendMsgSingle() {
+      var message = document.getElementById("type").value;
+      firebase.database().ref("message").push().set({
+        "sender": myName,
+        "message": message
+      });
+      //submitForm();
+      return false;
+    }
+    firebase.database().ref("message").on("child_added", function (snapshot) {
+      var html = "";
+      html += "<p>";
+
+      html += snapshot.val().sender + ": " + snapshot.val().message;
+      html += "</p>";
+
+      document.getElementById("messages").innerHTML += html;
+    });
+    function submitForm() {
+      // Get the first form with the name
+      // Hopefully there is only one, but there are more, select the correct index
+      var frm = document.getElementById("message");
+      frm.reset();  // Reset
+      return false; // Prevent page refresh
+    }
+  </script>
   <title>SkypeFake</title>
 </head>
 <body onload="showChecked()">
@@ -459,15 +504,15 @@
             <img class="profile" src="media/hiclipart.com.png">
             <div class="name" id="name5"></div>
           </div>
+          <form onsubmit="return sendMsgSingle();">
+            <input type="submit" value="Send message" style="background-color: green">
+          </form>
+          <div id="messages"></div>
         </div>
         <div id="chat" style="display:inline-block">
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
                style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
           <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
-          <form onsubmit="return sendMsg();">
-            <input id="message" placeholder="Enter message">
-            <input type="submit" value="Send message" style="background-color: green">
-          </form>
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat('data')">
