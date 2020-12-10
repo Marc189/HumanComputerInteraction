@@ -2,9 +2,11 @@
 var mic=false;
 var vid=false;
 
-var user=[["Muster80","1234","Max Mustermann","m_muster@gmail.com","1980-10-03"],
+var user=[
+  ["Muster80","1234","Max Mustermann","m_muster@gmail.com","1980-10-03"],
   ["MF189","test","Marc Niemella","mfniemella@gmail.com","1999-09-18"],
-  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]];
+  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]
+];
 
 var part;
 
@@ -70,7 +72,7 @@ function calling(){
     document.getElementById("names").innerText=str;
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
-    setTimeout("next()", 500);
+    setTimeout("next()", 5000);
     mic_vid();
   }
 }
@@ -79,7 +81,7 @@ function next(){
   if (document.getElementById('calling').style.display==="block"){
     document.getElementById('duringCall').style.display="block";
     document.getElementById('calling').style.display="none"
-    //document.getElementById('video').play();
+    document.getElementById('video').play();
   }
 }
 
@@ -296,6 +298,17 @@ function partis() {
   document.getElementById('participants').style.display = "block";
   document.getElementById('remote').style.display = "none";
   document.getElementById('back').style.display = "inline-block"
+  var p="";
+  for(var i=0;i<part.length;i++){
+    p+= "          <hr>\n" +
+        "          <div class=\"personSingle\">\n" +
+        "            <img src=\"media/hiclipart.com.png\" class=\"profilePic\" alt=\"Image\" width=\"40\">\n" +
+        "            <div class=\"nameParticipant\">"+ part[i].value +"</div>\n" +
+        "            <img src=\"media/clipart2499993.png\" class=\"chatIconRight\" alt=\"Image\" width=\"30\" onclick=\"chat2('"+part[i].value+"')\" >\n" +
+        "          </div>\n";
+  }
+  p+="<hr>";
+  document.getElementById('p').innerHTML=p;
 }
 
 
@@ -342,7 +355,7 @@ function icon(id) {
 }
 
 function showChecked() {
-  document.getElementById("result").textContent = document.querySelectorAll("input:checked").length + " Selected";
+  document.getElementById("result").innerText = document.querySelectorAll("input:checked").length + " Selected";
 }
 
 function addContact() {
@@ -385,10 +398,11 @@ function settings() {
 function edit(id1, id2) {
   var field = document.getElementById(id1);
   var input = document.getElementById(id2);
+  var user= document.getElementById("name");
   if (field.style.display === "none") {
     var x = input.value;
     field.innerText = x;
-    if (id1 === "name1") {
+    if (id1 === "name") {
       document.getElementById('name3').innerText = x;
     }
     field.style.display = "inline-block";
@@ -407,6 +421,10 @@ function edit(id1, id2) {
   }
 }
 
+function changeuser(name){
+
+}
+
 function logIN() {
   var usr = document.getElementById('username').value;
   var pwd = document.getElementById('pwd').value;
@@ -421,19 +439,28 @@ function logIN() {
       document.getElementById('date').value=user[i][4];
     }
   }
-  // if (pwd2===pwd) {
-  if (true) {
+  if (pwd2===pwd) {
+  //if (true) {
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
-    var cont=document.getElementsByClassName('person');
-    for(var i=0;i<cont.length;i++){
-      if (cont[i].value===document.getElementById('name').innerText){
-        cont[i].value="Elon Musk";
-        document.querySelector("label[for='" + cont[i].id + "']").innerText="Elon Musk";
-      }
-    }
+    changeContacts();
     keyhide();
   } else document.getElementById('error').innerText = "Password or Username wrong!";
+}
+
+function logout(){
+  document.getElementById('login').style.display = "block";
+  document.getElementById('home').style.display = "none";
+}
+
+function changeContacts(){
+  var cont=document.getElementsByClassName('person');
+  for(var i=0;i<cont.length;i++){
+    if (cont[i].value===document.getElementById('name').innerText){
+      cont[i].value="Elon Musk";
+      document.querySelector("label[for='" + cont[i].id + "']").innerText="Elon Musk";
+    }
+  }
 }
 
 
@@ -454,7 +481,7 @@ function sign() {
   if (uname === "" || pwd === "" || name === "" || email === "" || date === "") {
     document.getElementById("error2").innerText = "Something is missing!";
   } else {
-    user+=[uname,pwd,name,email,date];
+    user.push([uname,pwd,name,email,date]);
     // var data= uname+","+pwd+","+name+","+email+","+date
     // var xhttp = new XMLHttpRequest();
     // xhttp.onload = function () {

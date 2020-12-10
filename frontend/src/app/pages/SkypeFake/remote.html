@@ -16,7 +16,7 @@
 
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked(),loaduser()">
+<body onload="showChecked()">
   <div id="phone">
     <header>
       SkypeFake
@@ -73,6 +73,7 @@
         <!--        <button id="add" class="button" onclick="add()" style="display:none">Add</button>-->
         <!--        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block">Add contact</button>-->
         <p style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</p>
+        <img src="media/exit-logout-2857.png" style="width: 18px; display: inline-block; float: right;margin-right: 10px;cursor: pointer" onclick="logout()">
         <div id="checkbox" style="font-size: 20px;height: 470px;width: 360px;overflow-y: auto">
           <input type="text" id="addName" style="display: none" placeholder="Name">
           <input type="text" id="addemail" style="display: none" placeholder="Email">
@@ -466,11 +467,11 @@
                style="width:30px;cursor: pointer" onclick="chat('data')">
           <img id="keyboard" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
           <img id="em" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
-          <div id="dat" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
-            <button class="button2" >Doc.</button>
-            <button class="button2" >Audio</button>
-            <button class="button2" >Camera</button>
-            <button class="button2" >Galerie</button>
+          <div id="dat" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 32px">
+            <button class="button2" ><img src="media/pngfind.com-folder-icon-png-60466.png" style="width: 60px;margin-left: 10px"></button>
+            <button class="button2" ><img src="media/PngItem_2049736.png" style="width: 60px"></button>
+            <button class="button2" ><img src="media/clipart18794.png" style="width: 60px"></button>
+            <button class="button2" ><img src="media/iconfinder_18.Pictures-Day_290132.png" style="width: 60px"></button>
           </div>
         </div>
         <video autoplay="true" id="videoElement" style="width: 125px; display: none;float: right"></video>
@@ -479,37 +480,8 @@
         <div id="parti">
           <h4 style="margin-top: 20px">Participants:</h4>
           <br>
-          <hr>
-          <div class="personSingle">
-            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Moriz Schelten</div>
-            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Moritz Schelten')" >
+          <div id="p" style="height: 600px; overflow-y:auto">
           </div>
-          <hr>
-          <div class="personSingle">
-            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Traves Stolterfoht</div>
-            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Traves Stolterfoht')">
-          </div>
-          <hr>
-          <div class="personSingle">
-            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Marc Niemella</div>
-              <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marc Niemella')">
-          </div>
-          <hr>
-          <div class="personSingle">
-            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Max Niemella</div>
-            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Max Niemella')">
-          </div>
-          <hr>
-          <div class="personSingle">
-            <img src="media/hiclipart.com.png" class="profilePic" alt="Image" width="40">
-            <div class="nameParticipant">Marina Gonzalez</div>
-            <img src="media/clipart2499993.png" class="chatIconRight" alt="Image" width="30" onclick="chat2('Marina Gonzalez')">
-          </div>
-          <hr>
         </div>
         <div id="chat3" style="display: none">
           <div style="height: 372px">
@@ -524,11 +496,11 @@
             <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" onclick="change4('data')" style="width:30px;cursor: pointer">
             <img id="keyboard4" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
             <img id="em2" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">
-            <div id="dat2" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 38px">
-              <button class="button2" >Doc.</button>
-              <button class="button2" >Audio</button>
-              <button class="button2" >Camera</button>
-              <button class="button2" >Galerie</button>
+            <div id="dat2" style="background-color: grey;height: 217px;width: 360px ;display: none;padding: 0px 32px">
+              <button class="button2" ><img src="media/pngfind.com-folder-icon-png-60466.png" style="width: 60px;margin-left: 10px"></button>
+              <button class="button2" ><img src="media/PngItem_2049736.png" style="width: 60px"></button>
+              <button class="button2" ><img src="media/clipart18794.png" style="width: 60px"></button>
+              <button class="button2" ><img src="media/iconfinder_18.Pictures-Day_290132.png" style="width: 60px"></button>
             </div>
           </div>
         </div>
