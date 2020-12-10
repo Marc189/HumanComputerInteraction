@@ -11,6 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/phone.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="artyom.window.min.js"></script>
   <script src="js/phone.js"></script>
   <script src="js/tv.js"></script>
 
@@ -411,13 +412,13 @@
     </div>
     <div id="calling" style="display:none; text-align: center">
       <div id="c" style="height: 600px">
-        <div id="pict" style="margin-bottom: 20px;text-align: center">
+        <div id="pict" style="margin-bottom: 20px;margin-top:10px;text-align: center">
           <img id="pic" src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
         </div>
         <p id="names" style="font-size: 25px"></p>
       </div>
-      <button class="button" id="hang2" onclick="home()" style="float: bottom">Hang up</button>
-      <button class="button" id="accept" onclick="next()" style="float: bottom">Accept</button>
+      <button class="button" id="hang2" onclick="home()" style="float: bottom;display: inline-block">Hang up</button>
+      <button class="button" id="accept" onclick="next()" style="float: bottom;display: none">Accept</button>
     </div>
     <div id="duringCall" style="display:none;">
       <div style="height: 21px;margin-top: 10px">
@@ -463,6 +464,7 @@
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
                style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
           <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
+          <button class="button" id="send" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat('data')">
@@ -494,6 +496,7 @@
           <div style="display:inline-block">
             <img src="media/toppng.com-emoji-icon-white-980x980.png" onclick="change4('emoji')" style="width:30px;margin-left: 15px; cursor: pointer">
             <input type="text" id="type2" name="type" style="margin-bottom: 5px" onclick="change4('text')" placeholder="Type Message...">
+            <button class="button" id="send2" style="display: none;width: 50px;height: 40px;margin: 0 5px 0 0;"><img src="media/searchpng.com-send-icon-png-image-free-download.png" style="width: 25px"></button>
             <img src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png" onclick="change4('data')" style="width:30px;cursor: pointer">
             <img id="keyboard4" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%">
             <img id="em2" src="media/add-emoji-4-swiftkey.jpg" style="width: 96%; display: none;margin: 0 auto">

@@ -72,7 +72,7 @@ function calling(){
     document.getElementById("names").innerText=str;
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
-    setTimeout("next()", 5000);
+    setTimeout("next()", 500);
     mic_vid();
   }
 }
@@ -81,7 +81,7 @@ function next(){
   if (document.getElementById('calling').style.display==="block"){
     document.getElementById('duringCall').style.display="block";
     document.getElementById('calling').style.display="none"
-    document.getElementById('video').play();
+    //document.getElementById('video').play();
   }
 }
 
@@ -122,16 +122,22 @@ function chat(type){
       document.getElementById('em').style.display= 'block';
       document.getElementById('keyboard').style.display= 'none';
       document.getElementById('dat').style.display= 'none';
+      document.getElementById('send').style.display= 'inline-block';
+      document.getElementById('type').style.width= '200px';
       break;
     case "text":
       document.getElementById('keyboard').style.display= 'block';
       document.getElementById('em').style.display= 'none';
       document.getElementById('dat').style.display= 'none';
+      document.getElementById('send').style.display= 'inline-block';
+      document.getElementById('type').style.width= '200px';
       break;
     case "data":
       document.getElementById('dat').style.display= 'block';
       document.getElementById('keyboard').style.display= 'none';
       document.getElementById('em').style.display= 'none';
+      document.getElementById('send').style.display= 'none';
+      document.getElementById('type').style.width= '250px';
       break;
   }
   if(document.querySelectorAll("input:checked").length===1){
@@ -151,16 +157,22 @@ function change4(type){
       document.getElementById('em2').style.display= 'block';
       document.getElementById('keyboard4').style.display= 'none';
       document.getElementById('dat2').style.display= 'none';
+      document.getElementById('send2').style.display= 'inline-block';
+      document.getElementById('type2').style.width= '200px';
       break;
     case "text":
       document.getElementById('keyboard4').style.display= 'block';
       document.getElementById('em2').style.display= 'none';
       document.getElementById('dat2').style.display= 'none';
+      document.getElementById('send2').style.display= 'inline-block';
+      document.getElementById('type2').style.width= '200px';
       break;
     case "data":
       document.getElementById('dat2').style.display= 'block';
       document.getElementById('keyboard4').style.display= 'none';
       document.getElementById('em2').style.display= 'none';
+      document.getElementById('send2').style.display= 'none';
+      document.getElementById('type2').style.width= '250px';
       break;
   }
 
@@ -170,6 +182,8 @@ function chat2(name){
   document.getElementById('parti').style.display= 'none';
   document.getElementById('chat3').style.display= 'block';
   document.getElementById('nam').innerText=name;
+  document.getElementById('send2').style.display= 'inline-block';
+  document.getElementById('type2').style.width= '200px';
 
 }
 function change2(id){
@@ -260,6 +274,8 @@ function back(){
     document.getElementById('em').style.display='none';
     document.getElementById('dat').style.display='none';
     document.getElementById('chat2').style.display= 'none';
+    document.getElementById('send').style.display= 'none';
+    document.getElementById('type').style.width= '250px';
     if(vid){
       video();
       vid=false;
@@ -447,8 +463,8 @@ function logIN() {
       document.getElementById('date').value=user[i][4];
     }
   }
-  if (pwd2===pwd) {
-  //if (true) {
+  //if (pwd2===pwd) {
+  if (true) {
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
     changeContacts();
@@ -460,10 +476,15 @@ function logIN() {
 }
 
 function marcCalls(){
-    document.getElementById("names").innerText="Marc Niemella is calling";
-    document.getElementById('home').style.display="none";
-    document.getElementById('calling').style.display="block";
-    mic_vid();
+  document.getElementById("names").innerText="Marc Niemella is calling";
+  document.getElementById('home').style.display="none";
+  document.getElementById('calling').style.display="block";
+  document.getElementById('accept').style.display="inline-block";
+  document.getElementById('hang2').style.width="150px";
+  document.getElementById('hang2').style.margin="0";
+  document.getElementById('person5').checked=true;
+  part=document.querySelectorAll("input:checked");
+  mic_vid();
 }
 
 function logout(){
