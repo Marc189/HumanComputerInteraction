@@ -232,3 +232,14 @@ p{
   5px;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+#checkbox::-webkit-scrollbar,#messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#checkbox,#messages {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
