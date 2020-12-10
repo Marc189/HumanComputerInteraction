@@ -17,53 +17,9 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDUfSVEgE_GpOegzsAfjoJuQVzq0FUtYaM",
-      authDomain: "chat1-b0b4e.firebaseapp.com",
-      databaseURL: "https://chat1-b0b4e-default-rtdb.firebaseio.com",
-      projectId: "chat1-b0b4e",
-      storageBucket: "chat1-b0b4e.appspot.com",
-      messagingSenderId: "648930876414",
-      appId: "1:648930876414:web:72253f720ea3cce6e0beaf",
-      measurementId: "G-MDBPQ0768C"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-
-    function sendMsgSingle() {
-      var myName = document.getElementById('uname').innerText;
-      var message = document.getElementById("type").value;
-      document.getElementById('type').value="";
-      firebase.database().ref("message").push().set({
-        "sender": myName,
-        "message": message
-      });
-      //submitForm();
-      return false;
-    }
-    firebase.database().ref("message").on("child_added", function (snapshot) {
-      var html = "";
-      html += "<p>";
-
-      html += snapshot.val().sender + ": " + snapshot.val().message;
-      html += "</p>";
-
-      document.getElementById("messages").innerHTML += html;
-    });
-    function submitForm() {
-      // Get the first form with the name
-      // Hopefully there is only one, but there are more, select the correct index
-      var frm = document.getElementById("message");
-      frm.reset();  // Reset
-      return false; // Prevent page refresh
-    }
-  </script>
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked(),load()">
+<body onload="showChecked(),chatbot()">
   <div id="phone">
     <header>
       SkypeFake
@@ -119,7 +75,7 @@
         <br>
         <!--        <button id="add" class="button" onclick="add()" style="display:none">Add</button>-->
         <!--        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block">Add contact</button>-->
-        <p style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</p>
+        <div style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</div>
         <img src="media/exit-logout-2857.png" style="width: 18px; display: inline-block; float: right;margin-right: 10px;cursor: pointer" onclick="logout()">
         <div id="checkbox" style="font-size: 20px;height: 470px;width: 360px;overflow-y: auto">
           <input type="text" id="addName" style="display: none" placeholder="Name">
@@ -147,7 +103,7 @@
           <label for="person7"> Marina Gonzalez</label><br>
           <hr>
         </div>
-        <p id="result" style="display: inline-block;margin-left: 15px"></p>
+        <div id="result" style="display: inline-block;margin-left: 15px"></div>
         <button class="button" id="sCall" style="display: inline-block" onclick="calling()">Start Call</button>
       </div>
       <div id="sett" style="display: none">
@@ -461,7 +417,7 @@
         <div id="pict" style="margin-bottom: 20px;margin-top:10px;text-align: center">
           <img id="pic" src="media/hiclipart.com.png" style="height: 200px;margin-top: 30px ">
         </div>
-        <p id="names" style="font-size: 25px"></p>
+        <div id="names" style="font-size: 25px"></div>
       </div>
       <button class="button" id="hang2" onclick="home()" style="float: bottom;display: inline-block">Hang up</button>
       <button class="button" id="accept" onclick="next()" style="float: bottom;display: none">Accept</button>
@@ -500,12 +456,12 @@
           </div>
         </div>
         <div id="chat2" style="height: 372px;display: none">
-          <h4 id="group">Group Chat</h4>
+          <h4 id="group" style="margin: 30px 0">Group Chat</h4>
           <div class="topLine" style="margin-top: 10px" id="name6" style="display:none;">
             <img class="profile" src="media/hiclipart.com.png">
             <div class="name" id="name5"></div>
           </div>
-          <div id="messages" style="height: 320px;overflow-y: auto"></div>
+          <div id="messages" style="height: 310px;overflow-y: auto;margin: 10px;color: black"></div>
         </div>
         <div id="chat" style="display:inline-block">
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"

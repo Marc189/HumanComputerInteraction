@@ -10,6 +10,48 @@ var user=[
 
 var part;
 
+function chatbot(){
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUfSVEgE_GpOegzsAfjoJuQVzq0FUtYaM",
+    authDomain: "chat1-b0b4e.firebaseapp.com",
+    databaseURL: "https://chat1-b0b4e-default-rtdb.firebaseio.com",
+    projectId: "chat1-b0b4e",
+    storageBucket: "chat1-b0b4e.appspot.com",
+    messagingSenderId: "648930876414",
+    appId: "1:648930876414:web:72253f720ea3cce6e0beaf",
+    measurementId: "G-MDBPQ0768C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  init();
+
+}
+
+function init(){
+  firebase.database().ref("message").on("child_added", function (snapshot) {
+    var html = "";
+    html += "<p>";
+
+    html += snapshot.val().sender + ": " + snapshot.val().message;
+    html += "</p>";
+
+    document.getElementById("messages").innerHTML += html;
+  });
+}
+
+
+function sendMsgSingle() {
+  var myName = document.getElementById('uname').innerText;
+  var message = document.getElementById("type").value;
+  document.getElementById('type').value="";
+  firebase.database().ref("message").push().set({
+    "sender": myName,
+    "message": message
+  });
+  return false;
+}
+
 
 
 function loaduser(){
@@ -75,6 +117,7 @@ function calling(){
     document.getElementById('calling').style.display="block";
     setTimeout("next()", 500);
     mic_vid();
+    init();
   }
 }
 
@@ -92,6 +135,7 @@ function home() {
   document.getElementById('duringCall').style.display="none";
   document.getElementById('home').style.display="block";
 }
+
 
 var tv;
 var wall;
@@ -148,9 +192,11 @@ function chat(type){
     document.getElementById('group').style.display="none";
     document.getElementById('name6').style.display= 'block';
     document.getElementById('name5').innerText=part[0].value;
+    document.getElementById('messages').style.height="310px";
   }
   else{
     document.getElementById('group').style.display="block";
+    document.getElementById('messages').style.height="330px";
     document.getElementById('name6').style.display= 'none';
   }
 }
