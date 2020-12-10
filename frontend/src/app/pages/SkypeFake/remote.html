@@ -13,6 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="js/phone.js"></script>
   <script src="js/tv.js"></script>
+  <script src="js/wall.js"></script>
 
   <title>SkypeFake</title>
 </head>
@@ -463,6 +464,10 @@
           <img id="emoji" src="media/toppng.com-emoji-icon-white-980x980.png"
                style="width:30px;margin-left: 15px; cursor: pointer" onclick="chat('emoji')">
           <input type="text" id="type" name="type" placeholder="Type Message..." onclick="chat('text')">
+          <form onsubmit="return sendMsg();">
+            <input id="message" placeholder="Enter message">
+            <input type="submit" value="Send message" style="background-color: green">
+          </form>
           <img id="data"
                src="media/kisspng-paper-clip-font-awesome-clip-art-paper-clips-5b23f23a5cc933.2140075715290824263801.png"
                style="width:30px;cursor: pointer" onclick="chat('data')">

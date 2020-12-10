@@ -28,7 +28,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    var myName = userN;
+    var myName = "aaa";
 
     function sendMsg() {
       var message = document.getElementById("message").value;
@@ -66,10 +66,10 @@
     <header>
       SkypeFake
     </header>
-    <form onsubmit="return sendMsg();">
-      <input id="message" placeholder="Enter message">
-      <input type="submit" value="Send message" style="background-color: green">
-    </form>
+<!--    <form onsubmit="return sendMsg();">-->
+<!--      <input id="message" placeholder="Enter message">-->
+<!--      <input type="submit" value="Send message" style="background-color: green">-->
+<!--    </form>-->
     <div id="messages"></div>
   </div>
 </div>
