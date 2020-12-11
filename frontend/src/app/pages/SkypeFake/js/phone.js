@@ -146,7 +146,7 @@ function change(){
     document.getElementById('switch').style.display = 'block';
     document.getElementById('switch2').style.display = 'none';
     tv=window.open("tv.html", "", "width=1453,height=896");
-    wall=window.open("wall.html", "", "width=1453,height=431");
+//    wall=window.open("wall.html", "", "width=1453,height=431");
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
     tv.close()
