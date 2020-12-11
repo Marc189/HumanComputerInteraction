@@ -11,7 +11,7 @@ header{background-color: gray}
 }
 
 .twoParticipantsB{
-  height:510px;
+  height:810px;
 }
 
 #oneParticipantB{
@@ -29,14 +29,14 @@ header{background-color: gray}
   font-size: 30px;
 }
 
-/*#oneParticipant{*/
-/*  display: none;*/
-/*}*/
+#oneParticipant{
+  display: none;
+}
 
-/*#twoParticipants{*/
-/*  display: none;*/
-/*}*/
+#twoParticipants{
+  display: none;
+}
 
-/*#fourParticipants{*/
-/*  display: none;*/
-/*}*/
+#fourParticipants{
+  display: none;
+}
