@@ -9,23 +9,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/wall.css">
-  <script src="js/wall.js"></script>
-  <script src="js/phone.js"></script>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  <link rel="stylesheet" href="css/wall.css">
+  <script src="js/phone.js"></script>
   <title>SkypeFake</title>
 </head>
-<body onload="chatbot()">
+<body onload="scrollToBottom('messages')">
   <div>
     <div id="wall">
       <header>
         SkypeFake
       </header>
-      <div id="messages" style="height: 280px; overflow-y: auto;margin: 20px"></div>
+      <div id="messages" style="height: 280px; overflow-y: auto;margin: 20px" up></div>
     </div>
   </div>
+<script>
+  function scrollToBottom (id) {
+    var div = document.getElementById(id);
+    div.scrollTop = 10000000000000000;
+    setTimeout("scrollToBottom('messages')",200)
+  }
+  window.opener.fire.database().ref("message").on("child_added", function (snapshot) {
+    var html = "";
+    html += "<p>";
+
+    html += snapshot.val().sender + ": " + snapshot.val().message;
+    html += "</p>";
+
+    document.getElementById("messages").innerHTML += html;
+  });
+</script>
 </body>
 </html>
