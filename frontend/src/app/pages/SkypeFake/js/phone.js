@@ -303,11 +303,11 @@ function chat(type){
     document.getElementById('group').style.display="none";
     document.getElementById('name6').style.display= 'block';
     document.getElementById('name5').innerText=part[0].value;
-    document.getElementById('messages').style.height="310px";
+    document.getElementById('chat2').style.height="372px";
   }
   else{
     document.getElementById('group').style.display="block";
-    document.getElementById('messages').style.height="330px";
+    document.getElementById('chat2').style.height="351px";
     document.getElementById('name6').style.display= 'none';
   }
 }
@@ -438,22 +438,25 @@ function change3(){
 function showVideos() {
     if (numPart === 1) {
       document.getElementById('vi').innerHTML =
-        "<div id=\"one\" style=\"padding: 50px 0\">\n" +
+        "<div id=\"one\" style=\"padding: 50px 0;position: relative\">\n" +
         "  <video id='one1' width=\"360\">\n" +
         "    <source src=\"media/izar.mp4\">\n" +
         "  </video>\n" +
+        "  <div style='position: absolute;top: 50px;left: 10px'>"+part[0].value+"</div>"+
         "</div>";
       document.getElementById("one1").play();
     }
     if (numPart === 2) {
       document.getElementById('vi').innerHTML =
-        "          <div id=\"two\" style=\"padding: 5px 15px\">\n" +
+        "          <div id=\"two\" style=\"padding: 5px 15px;position: relative\">\n" +
         "            <video id='two1' width=\"330\">\n" +
         "              <source src=\"media/marina.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 5px;left: 20px'>"+part[0].value+"</div>"+
         "            <video id='two2' width=\"330\">\n" +
         "              <source src=\"media/mar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 195px;left: 20px'>"+part[1].value+"</div>"+
         "          </div>"
       document.getElementById("two1").play();
       setTimeout(function () {
@@ -462,16 +465,19 @@ function showVideos() {
     }
     if (numPart === 3) {
       document.getElementById('vi').innerHTML =
-        "          <div id=\"three\" style=\"padding: 20px 80px\">\n" +
+        "          <div id=\"three\" style=\"padding: 20px 80px;position: relative\">\n" +
         "            <video id='three1' width=\"200\">\n" +
         "              <source src=\"media/marina.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 20px;left: 85px'>"+part[0].value+"</div>"+
         "            <video id='three2' width=\"200\">\n" +
         "              <source src=\"media/mar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 135px;left: 85px'>"+part[1].value+"</div>"+
         "            <video id='three3' width=\"200\">\n" +
         "              <source src=\"media/carmen.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 250px;left: 85px'>"+part[2].value+"</div>"+
         "          </div>"
       document.getElementById("three1").play();
       setTimeout(function () {
@@ -484,19 +490,23 @@ function showVideos() {
     }
     if (numPart === 4) {
       document.getElementById('vi').innerHTML =
-        "          <div id=\"four\" style=\"padding: 50px 3px\">\n" +
+        "          <div id=\"four\" style=\"padding: 50px 3px;position: relative\">\n" +
         "            <video id='four1' width=\"175\">\n" +
         "              <source src=\"media/marina.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 50px;left: 5px'>"+part[0].value+"</div>"+
         "            <video id='four2' width=\"175\">\n" +
         "              <source src=\"media/mar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 50px;left: 185px'>"+part[1].value+"</div>"+
         "            <video id='four3' width=\"175\">\n" +
         "              <source src=\"media/carmen.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 150px;left: 5px'>"+part[2].value+"</div>"+
         "            <video id='four4' width=\"175\">\n" +
         "              <source src=\"media/faku.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 150px;left: 185px'>"+part[3].value+"</div>"+
         "          </div>"
       document.getElementById("four1").play();
       setTimeout(function () {
@@ -511,22 +521,27 @@ function showVideos() {
     }
     if (numPart === 5) {
       document.getElementById('vi').innerHTML =
-        "          <div id=\"five\" style=\"padding: 50px 3px\">\n" +
+        "          <div id=\"five\" style=\"padding: 50px 3px;position: relative\">\n" +
         "            <video id='five1' width=\"175\">\n" +
         "              <source src=\"media/marina.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 50px;left: 5px'>"+part[0].value+"</div>"+
         "            <video id='five2' width=\"175\">\n" +
         "              <source src=\"media/mar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 50px;left: 185px'>"+part[1].value+"</div>"+
         "            <video id='five3' width=\"175\">\n" +
         "              <source src=\"media/carmen.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 150px;left: 5px'>"+part[2].value+"</div>"+
         "            <video id='five4' width=\"175\">\n" +
         "              <source src=\"media/faku.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 150px;left: 185px'>"+part[3].value+"</div>"+
         "            <video id='five5' style=\"margin: 0 90px\" width=\"175\">\n" +
         "              <source src=\"media/moritz.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 255px;left: 95px'>"+part[4].value+"</div>"+
         "          </div>"
       document.getElementById("five1").play();
       setTimeout(function () {
@@ -545,25 +560,31 @@ function showVideos() {
     }
     if (numPart === 6) {
       document.getElementById('vi').innerHTML =
-        "          <div id=\"six\" style=\"padding: 30px 3px\">\n" +
+        "          <div id=\"six\" style=\"padding: 30px 3px;position: relative\">\n" +
         "            <video id='six1' width=\"175\">\n" +
         "              <source src=\"media/marina.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 30px;left: 5px'>"+part[0].value+"</div>"+
         "            <video id='six2' width=\"175\">\n" +
         "              <source src=\"media/izar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 30px;left: 185px'>"+part[5].value+"</div>"+
         "            <video id='six3' width=\"175\">\n" +
         "              <source src=\"media/mar.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 130px;left: 5px'>"+part[1].value+"</div>"+
         "            <video id='six4' width=\"175\">\n" +
         "              <source src=\"media/carmen.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 130px;left: 185px'>"+part[2].value+"</div>"+
         "            <video id='six5' width=\"175\">\n" +
         "              <source src=\"media/faku.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 235px;left: 5px'>"+part[3].value+"</div>"+
         "            <video id='six6' width=\"175\">\n" +
         "              <source src=\"media/moritz.mp4\">\n" +
         "            </video>\n" +
+        "            <div style='position: absolute;top: 235px;left: 185px'>"+part[4].value+"</div>"+
         "          </div>"
       document.getElementById("six1").play();
       setTimeout(function () {
@@ -584,28 +605,35 @@ function showVideos() {
     }
     if (numPart === 7) {
       document.getElementById('vi').innerHTML =
-        "    <div id=\"seven\" style=\"padding: 5px 18px\">\n" +
+        "    <div id=\"seven\" style=\"padding: 5px 18px;position: relative\">\n" +
         "      <video id='seven1' width=\"160\">\n" +
         "        <source src=\"media/marina.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 5px;left: 20px'>"+part[0].value+"</div>"+
         "      <video id='seven2' width=\"160\">\n" +
         "        <source src=\"media/izar.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 5px;left: 185px'>"+part[5].value+"</div>"+
         "      <video id='seven3' width=\"160\">\n" +
         "        <source src=\"media/mar.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 100px;left: 20px'>"+part[1].value+"</div>"+
         "      <video id='seven4' width=\"160\">\n" +
         "        <source src=\"media/carmen.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 100px;left: 185px'>"+part[2].value+"</div>"+
         "      <video id='seven5' width=\"160\">\n" +
         "        <source src=\"media/faku.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 190px;left: 20px'>"+part[3].value+"</div>"+
         "      <video id='seven6' width=\"160\">\n" +
         "        <source src=\"media/moritz.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 190px;left: 185px'>"+part[4].value+"</div>"+
         "      <video id='seven7' style=\"margin: 0 82px\" width=\"160\">\n" +
         "        <source src=\"media/carmenBeingCarmen.mp4\">\n" +
         "      </video>\n" +
+        "            <div style='position: absolute;top: 285px;left: 105px'>"+part[6].value+"</div>"+
         "    </div>"
       document.getElementById("seven1").play();
       setTimeout(function () {

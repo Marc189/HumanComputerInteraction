@@ -12,11 +12,13 @@
   <link rel="stylesheet" href="css/phone.css">
   <title>SykpeFake</title>
 </head>
-<body>
-  <button class="button" id="startbutton" onclick="start()" style="width: 500px;height: 500px">Start Demo</button>
+<body style="background-color: #333333;text-align: center;alignment: center">
+  <h1 style="color: white">Welcome in our SykpeFake Demo. Press the Button to start.</h1>
+  <button class="button" id="startbutton" onclick="start()" style="width: 250px;height: 250px;margin: 200px auto">Start Demo</button>
   <script>
     function start(){
-      window.open('remote.html','','width=383,height=838')
+      //window.open('remote.html','','width=383,height=838')
+      window.open('remote.html','','width=373,height=826')
       var x=window.open("","_self");
       x.close();
     }

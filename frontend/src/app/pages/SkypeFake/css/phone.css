@@ -3,7 +3,7 @@
   width: 360px;
   background-color: #333333;
   color: white;
-  margin: 1px auto;
+  margin: 0 auto;
 }
 #moveRight{
   padding-left:10px;
@@ -243,7 +243,3 @@ p{
   scrollbar-width: none;  /* Firefox */
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
