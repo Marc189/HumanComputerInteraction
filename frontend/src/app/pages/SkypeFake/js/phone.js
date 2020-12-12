@@ -265,7 +265,7 @@ function home() {
 var tv;
 var wall;
 function change(){
-  document.getElementById('back').style.display="none"
+  document.getElementById('back').style.display="none";
 
   if (document.getElementById('switch').style.display ==='none'){
     document.getElementById('switch').style.display = 'block';
@@ -273,6 +273,9 @@ function change(){
     tv=window.open("tv.html", "", "width=1453,height=896");
     wall=window.open("wall.html", "", "width=1453,height=431");
     wall.myVariable = fire;
+    var num2=document.querySelectorAll("input:checked").length;
+    num2="haksj";
+    tv.myVariableee=num2;
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
     tv.close()

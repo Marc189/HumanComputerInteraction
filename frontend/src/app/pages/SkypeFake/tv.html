@@ -9,8 +9,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <link rel="stylesheet" href="css/tv.css">
-  <script src="js/tv.js"></script>
+  <script src="js/phone.js"></script>
+  <!--  <script src="js/tv.js"></script>-->
   <title>SkypeFake</title>
 </head>
 <body onload="showCheckedd()">
@@ -29,80 +32,102 @@
       </div>
     </div>
 
-<!--    <div id="twoParticipants">-->
-<!--      <div class="flex-container">-->
-<!--        <div class="twoParticipantsB">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201211_21_46_11_Pro.mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="twoParticipantsB">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div id="twoParticipants">
+      <div class="flex-container">
+        <div class="twoParticipantsB">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201211_21_46_11_Pro.mp4">
+          </video>
+        </div>
+        <div class="twoParticipantsB">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+      </div>
+    </div>
 
-<!--    <div id="fourParticipants">-->
-<!--      <div class="flex-container">-->
-<!--        <div>-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div id="sixParticipants">-->
-<!--      <div class="flex-container">-->
-<!--        <div class="sixParticipantsB" style="height: 254px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="sixParticipantsB" style="height: 254px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="sixParticipantsB" style="height: 254px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="sixParticipantsB" style="height: 254px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="sixParticipantsB" style="height: 251px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--        <div class="sixParticipantsB" style="height: 254px">-->
-<!--          <video width="100%" height="100%" controls loop autoplay>-->
-<!--            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">-->
-<!--          </video>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div id="fourParticipants">
+      <div class="flex-container">
+        <div>
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div>
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div>
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div>
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="sixParticipants">
+      <div class="flex-container">
+        <div class="sixParticipantsB" style="height: 254px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 251px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video width="100%" height="100%" controls loop autoplay>
+            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
+  <script>
+    function showCheckedd() {
+      // var myVariable;
+      // myVariable = window.opener.num2;
+      var nu=6;
+      console.log(nu);
+      if (nu === 1) {
+        document.getElementById("oneParticipant").style.display = "block";
+        // document.getElementById("twoParticipants").style.display = "none";
+        // document.getElementById("fourParticipants").style.display = "none";
+      }
+      if (nu === 2) {
+        document.getElementById("twoParticipants").style.display = "block";
+      }
+      if (nu === 4) {
+        document.getElementById("fourParticipants").style.display = "block";
+      }
+      if (nu === 6) {
+        document.getElementById("sixParticipants").style.display = "block";
+      }
+    }
+  </script>
 </div>
 </body>
 </html>
