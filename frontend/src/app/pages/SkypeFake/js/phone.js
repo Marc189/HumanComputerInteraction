@@ -330,12 +330,10 @@ function chat(type){
     document.getElementById('name6').style.display= 'none';
   }
 }
-
 function scrollToBottom (id) {
   var div = document.getElementById(id);
   div.scrollTop = 10000000000000000;
 }
-
 function change4(type){
   switch (type){
     case "emoji":
