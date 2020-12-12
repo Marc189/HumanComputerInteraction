@@ -12,17 +12,22 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <link rel="stylesheet" href="css/tv.css">
+<<<<<<< HEAD
   <script src="js/phone.js"></script>
   <!--  <script src="js/tv.js"></script>-->
+=======
+<!--  <script src="js/tv.js"></script>-->
+  <script src="js/phone.js"></script>
+>>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
   <title>SkypeFake</title>
 </head>
-<body onload="showCheckedd()">
+<body onload="showCheck()">
 <div>
   <div id="tv">
     <header>
       SkypeFake
     </header>
-    <div id="oneParticipant">
+    <div id="oneParticipant" style="display: none">
       <div class="flex-container">
         <div id="oneParticipantB">
           <video width="100%" height="100%" controls loop autoplay>
@@ -32,7 +37,11 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <div id="twoParticipants">
+=======
+    <div id="twoParticipants" style="display: none">
+>>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div class="twoParticipantsB">
           <video width="100%" height="100%" controls loop autoplay>
@@ -47,7 +56,11 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <div id="fourParticipants">
+=======
+    <div id="fourParticipants" style="display: none">
+>>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div>
           <video width="100%" height="100%" controls loop autoplay>
@@ -71,7 +84,11 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div id="sixParticipants">
+=======
+    <div id="sixParticipants" style="display: none">
+>>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div class="sixParticipantsB" style="height: 254px">
           <video width="100%" height="100%" controls loop autoplay>
@@ -107,6 +124,7 @@
     </div>
   </div>
   <script>
+<<<<<<< HEAD
     function showCheckedd() {
       // var myVariable;
       // myVariable = window.opener.num2;
@@ -124,6 +142,23 @@
         document.getElementById("fourParticipants").style.display = "block";
       }
       if (nu === 6) {
+=======
+    var numP = window.opener.numPart;
+    function showCheck() {
+      console.log(numP);
+      if (numP === 1) {
+        document.getElementById("oneParticipant").style.display = "block";
+        document.getElementById("twoParticipants").style.display = "none";
+        document.getElementById("fourParticipants").style.display = "none";
+      }
+      if (numP === 2) {
+        document.getElementById("twoParticipants").style.display = "block";
+      }
+      if (numP === 4) {
+        document.getElementById("fourParticipants").style.display = "block";
+      }
+      if (numP === 6) {
+>>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
         document.getElementById("sixParticipants").style.display = "block";
       }
     }
