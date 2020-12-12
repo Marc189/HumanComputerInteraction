@@ -25,7 +25,7 @@
     <div id="oneParticipant" style="display: none">
       <div class="flex-container">
         <div id="oneParticipantB">
-          <video id="one" width="100%" height="100%" controls loop>
+          <video id="one" width="100%" height="100%">
             <source src="media/izar.mp4">
           </video>
         </div>
@@ -35,12 +35,12 @@
     <div id="twoParticipants" style="display: none">
       <div class="flex-container">
         <div class="twoParticipantsB">
-          <video id="two1" width="100%" height="100%" controls loop>
+          <video id="two1" width="100%" height="100%">
             <source src="media/marina.mp4">
           </video>
         </div>
         <div class="twoParticipantsB">
-          <video id="two2" width="100%" height="100%" controls loop>
+          <video id="two2" width="100%" height="100%">
             <source src="media/mar.mp4">
           </video>
         </div>
@@ -50,22 +50,22 @@
     <div id="fourParticipants" style="display: none">
       <div class="flex-container">
         <div>
-          <video id="four1" width="100%" height="100%" controls loop>
+          <video id="four1" width="100%" height="100%">
             <source src="media/marina.mp4">
           </video>
         </div>
         <div>
-          <video id="four2" width="100%" height="100%" controls loop>
+          <video id="four2" width="100%" height="100%">
             <source src="media/mar.mp4">
           </video>
         </div>
         <div>
-          <video id="four3" width="100%" height="100%" controls loop>
+          <video id="four3" width="100%" height="100%">
             <source src="media/carmen.mp4">
           </video>
         </div>
         <div>
-          <video id="four4" width="100%" height="100%" controls loop>
+          <video id="four4" width="100%" height="100%">
             <source src="media/faku.mp4">
           </video>
         </div>
@@ -74,32 +74,32 @@
     <div id="sixParticipants" style="display: none">
       <div class="flex-container">
         <div class="sixParticipantsB" style="height: 254px">
-          <video id="six1" width="100%" height="100%" controls loop>
+          <video id="six1" width="100%" height="100%">
             <source src="media/marina.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 251px">
-          <video id="six2" width="100%" height="100%" controls loop>
+          <video id="six2" width="100%" height="100%">
             <source src="media/izar.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 254px">
-          <video id="six3" width="100%" height="100%" controls loop>
+          <video id="six3" width="100%" height="100%">
             <source src="media/mar.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 254px">
-          <video id="six4" width="100%" height="100%" controls loop>
+          <video id="six4" width="100%" height="100%">
             <source src="media/carmen.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 254px">
-          <video id="six5" width="100%" height="100%" controls loop>
+          <video id="six5" width="100%" height="100%">
             <source src="media/faku.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 254px">
-          <video id="six6" width="100%" height="100%" controls loop>
+          <video id="six6" width="100%" height="100%">
             <source src="media/moritz.mp4">
           </video>
         </div>
@@ -118,25 +118,44 @@
       if (numP === 2) {
         document.getElementById("twoParticipants").style.display = "block";
         document.getElementById("two1").autoplay = true;
-        document.getElementById("two2").autoplay = true;
+        setTimeout(function(){
+          document.getElementById("two2").play();
+        }, 12000);
       }
       if (numP === 4) {
         document.getElementById("fourParticipants").style.display = "block";
         document.getElementById("four1").autoplay = true;
-        document.getElementById("four2").autoplay = true;
-        document.getElementById("four3").autoplay = true;
-        document.getElementById("four4").autoplay = true;
+        setTimeout(function(){
+          document.getElementById("four2").play();
+        }, 12000);
+        setTimeout(function(){
+          document.getElementById("four3").play();
+        }, 22000);
+        setTimeout(function(){
+          document.getElementById("four4").play();
+        }, 26000);
       }
       if (numP === 6) {
         document.getElementById("sixParticipants").style.display = "block";
         document.getElementById("six1").autoplay = true;
-        document.getElementById("six2").autoplay = true;
-        document.getElementById("six3").autoplay = true;
-        document.getElementById("six4").autoplay = true;
-        document.getElementById("six5").autoplay = true;
-        document.getElementById("six6").autoplay = true;
+        setTimeout(function(){
+          document.getElementById("six2").play();
+        }, 12000);
+        setTimeout(function(){
+          document.getElementById("six3").play();
+        }, 18000);
+        setTimeout(function(){
+          document.getElementById("six4").play();
+        }, 28000);
+        setTimeout(function(){
+          document.getElementById("six5").play();
+        }, 32000);
+        setTimeout(function(){
+          document.getElementById("six6").play();
+        }, 41000);
       }
     }
+
   </script>
 </div>
 </body>
