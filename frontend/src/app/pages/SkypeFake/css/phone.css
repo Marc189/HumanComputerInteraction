@@ -3,7 +3,7 @@
   width: 360px;
   background-color: #333333;
   color: white;
-  margin: 10px 60px;
+  margin: 1px auto;
 }
 #moveRight{
   padding-left:10px;
@@ -43,8 +43,8 @@ h1 {
 #accept{background-color: green;height: 50px;width: 150px;}
 #accept:active,#accept:hover{background-color: darkgreen}
 
-#mute,#vid,#part,#rec,#share,#only,#call,#living,#sCall,#add,#addContact,#setB,.button2,#send,#send2{background-color: darkgray}
-#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#sCall:hover,#add:hover,#addContact:hover,#setB:hover,.button2:hover,#send:hover,#send2:hover{background-color: #666666}
+#mute,#vid,#part,#rec,#share,#only,#call,#living,#sCall,#add,#addContact,#setB,.button2,#send,#send2,#startbutton{background-color: darkgray}
+#mute:hover,#vid:hover,#part:hover,#rec:hover,#share:hover,#only:hover,#call:hover,#living:hover,#sCall:hover,#add:hover,#addContact:hover,#setB:hover,.button2:hover,#send:hover,#send2:hover,#startbutton:hover{background-color: #666666}
 
 
 #only,#hang2{height: 50px;width: 200px;margin: 30px 75px}
@@ -233,12 +233,12 @@ p{
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-#checkbox::-webkit-scrollbar,#messages::-webkit-scrollbar {
+#checkbox::-webkit-scrollbar,#messages::-webkit-scrollbar,#messages2::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-#checkbox,#messages {
+#checkbox,#messages,#messages2 {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
