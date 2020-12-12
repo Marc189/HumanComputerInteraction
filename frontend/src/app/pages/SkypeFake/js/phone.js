@@ -278,7 +278,7 @@ function change(){
     tv.numP = numPart;
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
-    tv.close()
+    tv.close();
     wall.close();
     document.getElementById('switch2').style.display = 'block' ;
     document.getElementById('switch').style.display = 'none';

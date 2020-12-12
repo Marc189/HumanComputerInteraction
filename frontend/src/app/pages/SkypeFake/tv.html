@@ -12,13 +12,8 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <link rel="stylesheet" href="css/tv.css">
-<<<<<<< HEAD
-  <script src="js/phone.js"></script>
   <!--  <script src="js/tv.js"></script>-->
-=======
-<!--  <script src="js/tv.js"></script>-->
   <script src="js/phone.js"></script>
->>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
   <title>SkypeFake</title>
 </head>
 <body onload="showCheck()">
@@ -30,136 +25,116 @@
     <div id="oneParticipant" style="display: none">
       <div class="flex-container">
         <div id="oneParticipantB">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201211_21_46_11_Pro.mp4">
+          <video id="one" width="100%" height="100%" controls loop>
+            <source src="media/izar.mp4">
           </video>
         </div>
       </div>
     </div>
 
-<<<<<<< HEAD
-    <div id="twoParticipants">
-=======
     <div id="twoParticipants" style="display: none">
->>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div class="twoParticipantsB">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201211_21_46_11_Pro.mp4">
+          <video id="two1" width="100%" height="100%" controls loop>
+            <source src="media/marina.mp4">
           </video>
         </div>
         <div class="twoParticipantsB">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="two2" width="100%" height="100%" controls loop>
+            <source src="media/mar.mp4">
           </video>
         </div>
       </div>
     </div>
 
-<<<<<<< HEAD
-    <div id="fourParticipants">
-=======
     <div id="fourParticipants" style="display: none">
->>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div>
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="four1" width="100%" height="100%" controls loop>
+            <source src="media/marina.mp4">
           </video>
         </div>
         <div>
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="four2" width="100%" height="100%" controls loop>
+            <source src="media/mar.mp4">
           </video>
         </div>
         <div>
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="four3" width="100%" height="100%" controls loop>
+            <source src="media/carmen.mp4">
           </video>
         </div>
         <div>
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="four4" width="100%" height="100%" controls loop>
+            <source src="media/faku.mp4">
           </video>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <div id="sixParticipants">
-=======
     <div id="sixParticipants" style="display: none">
->>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
       <div class="flex-container">
         <div class="sixParticipantsB" style="height: 254px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
-          </video>
-        </div>
-        <div class="sixParticipantsB" style="height: 254px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
-          </video>
-        </div>
-        <div class="sixParticipantsB" style="height: 254px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
-          </video>
-        </div>
-        <div class="sixParticipantsB" style="height: 254px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="six1" width="100%" height="100%" controls loop>
+            <source src="media/marina.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 251px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="six2" width="100%" height="100%" controls loop>
+            <source src="media/izar.mp4">
           </video>
         </div>
         <div class="sixParticipantsB" style="height: 254px">
-          <video width="100%" height="100%" controls loop autoplay>
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4">
+          <video id="six3" width="100%" height="100%" controls loop>
+            <source src="media/mar.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="six4" width="100%" height="100%" controls loop>
+            <source src="media/carmen.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="six5" width="100%" height="100%" controls loop>
+            <source src="media/faku.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="six6" width="100%" height="100%" controls loop>
+            <source src="media/moritz.mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
   <script>
-<<<<<<< HEAD
-    function showCheckedd() {
-      // var myVariable;
-      // myVariable = window.opener.num2;
-      var nu=6;
-      console.log(nu);
-      if (nu === 1) {
-        document.getElementById("oneParticipant").style.display = "block";
-        // document.getElementById("twoParticipants").style.display = "none";
-        // document.getElementById("fourParticipants").style.display = "none";
-      }
-      if (nu === 2) {
-        document.getElementById("twoParticipants").style.display = "block";
-      }
-      if (nu === 4) {
-        document.getElementById("fourParticipants").style.display = "block";
-      }
-      if (nu === 6) {
-=======
     var numP = window.opener.numPart;
+
     function showCheck() {
       console.log(numP);
       if (numP === 1) {
         document.getElementById("oneParticipant").style.display = "block";
-        document.getElementById("twoParticipants").style.display = "none";
-        document.getElementById("fourParticipants").style.display = "none";
+        document.getElementById("one").autoplay = true;
       }
       if (numP === 2) {
         document.getElementById("twoParticipants").style.display = "block";
+        document.getElementById("two1").autoplay = true;
+        document.getElementById("two2").autoplay = true;
       }
       if (numP === 4) {
         document.getElementById("fourParticipants").style.display = "block";
+        document.getElementById("four1").autoplay = true;
+        document.getElementById("four2").autoplay = true;
+        document.getElementById("four3").autoplay = true;
+        document.getElementById("four4").autoplay = true;
       }
       if (numP === 6) {
->>>>>>> 8c83539412c5c356e63eaa23e67c76fce3f4921c
         document.getElementById("sixParticipants").style.display = "block";
+        document.getElementById("six1").autoplay = true;
+        document.getElementById("six2").autoplay = true;
+        document.getElementById("six3").autoplay = true;
+        document.getElementById("six4").autoplay = true;
+        document.getElementById("six5").autoplay = true;
+        document.getElementById("six6").autoplay = true;
       }
     }
   </script>
