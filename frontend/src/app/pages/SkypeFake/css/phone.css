@@ -233,12 +233,12 @@ p{
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-#checkbox::-webkit-scrollbar,#messages::-webkit-scrollbar,#messages2::-webkit-scrollbar {
+#checkbox::-webkit-scrollbar,#messages::-webkit-scrollbar,#messages2::-webkit-scrollbar,#p::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-#checkbox,#messages,#messages2 {
+#checkbox,#messages,#messages2,#p {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
