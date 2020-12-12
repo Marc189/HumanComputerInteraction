@@ -47,6 +47,26 @@
       </div>
     </div>
 
+    <div id="threeParticipants" style="display: none">
+      <div class="flex-container">
+        <div class="threeParticipantsB">
+          <video id="three1" width="100%" height="100%">
+            <source src="media/marina.mp4">
+          </video>
+        </div>
+        <div class="threeParticipantsB">
+          <video id="three2" width="100%" height="100%">
+            <source src="media/mar.mp4">
+          </video>
+        </div>
+        <div id="threeParticipantsB">
+          <video id="three3" width="100%" height="100%">
+            <source src="media/carmen.mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
     <div id="fourParticipants" style="display: none">
       <div class="flex-container">
         <div>
@@ -71,6 +91,37 @@
         </div>
       </div>
     </div>
+
+    <div id="fiveParticipants" style="display: none">
+      <div class="flex-container">
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="five1" width="100%" height="100%">
+            <source src="media/marina.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="five2" width="100%" height="100%">
+            <source src="media/izar.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="five3" width="100%" height="100%">
+            <source src="media/mar.mp4">
+          </video>
+        </div>
+        <div class="sixParticipantsB" style="height: 254px">
+          <video id="five4" width="100%" height="100%">
+            <source src="media/carmen.mp4">
+          </video>
+        </div>
+        <div id="fiveParticipantsB" style="height: 254px">
+          <video id="five5" width="100%" height="100%">
+            <source src="media/faku.mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
     <div id="sixParticipants" style="display: none">
       <div class="flex-container">
         <div class="sixParticipantsB" style="height: 254px">
@@ -78,7 +129,7 @@
             <source src="media/marina.mp4">
           </video>
         </div>
-        <div class="sixParticipantsB" style="height: 251px">
+        <div class="sixParticipantsB" style="height: 254px">
           <video id="six2" width="100%" height="100%">
             <source src="media/izar.mp4">
           </video>
@@ -118,39 +169,65 @@
       if (numP === 2) {
         document.getElementById("twoParticipants").style.display = "block";
         document.getElementById("two1").autoplay = true;
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("two2").play();
         }, 12000);
+      }
+      if (numP === 3) {
+        document.getElementById("threeParticipants").style.display = "block";
+        document.getElementById("three1").autoplay = true;
+        setTimeout(function () {
+          document.getElementById("three2").play();
+        }, 12000);
+        setTimeout(function () {
+          document.getElementById("three3").play();
+        }, 22000);
       }
       if (numP === 4) {
         document.getElementById("fourParticipants").style.display = "block";
         document.getElementById("four1").autoplay = true;
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("four2").play();
         }, 12000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("four3").play();
         }, 22000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("four4").play();
         }, 26000);
+      }
+      if (numP === 5) {
+        document.getElementById("fiveParticipants").style.display = "block";
+        document.getElementById("five1").autoplay = true;
+        setTimeout(function () {
+          document.getElementById("five2").play();
+        }, 12000);
+        setTimeout(function () {
+          document.getElementById("five3").play();
+        }, 18000);
+        setTimeout(function () {
+          document.getElementById("five4").play();
+        }, 28000);
+        setTimeout(function () {
+          document.getElementById("five5").play();
+        }, 32000);
       }
       if (numP === 6) {
         document.getElementById("sixParticipants").style.display = "block";
         document.getElementById("six1").autoplay = true;
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("six2").play();
         }, 12000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("six3").play();
         }, 18000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("six4").play();
         }, 28000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("six5").play();
         }, 32000);
-        setTimeout(function(){
+        setTimeout(function () {
           document.getElementById("six6").play();
         }, 41000);
       }
