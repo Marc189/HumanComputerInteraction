@@ -19,6 +19,10 @@ header{background-color: gray}
   width: 1440px;
 }
 
+#sixParticipants{
+  height: 200px;
+}
+
 .flex-container > div {
   background-color: #f1f1f1;
   height: 385px;
@@ -29,14 +33,18 @@ header{background-color: gray}
   font-size: 30px;
 }
 
-#oneParticipant{
-  display: none;
-}
+/*#oneParticipant{*/
+/*  display: none;*/
+/*}*/
 
-#twoParticipants{
-  display: none;
-}
+/*#twoParticipants{*/
+/*  display: none;*/
+/*}*/
 
-#fourParticipants{
-  display: none;
-}
+/*#fourParticipants{*/
+/*  display: none;*/
+/*}*/
+
+/*#sixParticipants{*/
+/*  display: none;*/
+/*}*/

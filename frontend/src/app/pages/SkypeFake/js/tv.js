@@ -1,21 +1,19 @@
 'use strict';
-var numberParticipants;
-
-function showChecked() {
-  document.getElementById("result").textContent = document.querySelectorAll("input:checked").length + " Selected";
-  numberParticipants = document.querySelectorAll("input:checked").length;
-  console.log(numberParticipants);
-  // document.getElementById("oneParticipant").style.display = "none";
-  // document.getElementById("twoParticipants").style.display = "none";
-  // document.getElementById("fourParticipants").style.display = "none";
-  if (numberParticipants === 1) {
+function showCheckedd() {
+  console.log(num);
+  if (window.num === 1) {
     document.getElementById("oneParticipant").style.display = "block";
+    document.getElementById("twoParticipants").style.display = "none";
+    document.getElementById("fourParticipants").style.display = "none";
   }
-  if (numberParticipants === 2) {
+  if (window.num === 2) {
     document.getElementById("twoParticipants").style.display = "block";
   }
-  if (numberParticipants === 4) {
+  if (window.num === 4) {
     document.getElementById("fourParticipants").style.display = "block";
+  }
+  if (window.num === 6) {
+    document.getElementById("sixParticipants").style.display = "block";
   }
 }
 
