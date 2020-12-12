@@ -90,7 +90,7 @@ var chat_8=firebase.initializeApp({
 },'chat8');
 var fire=chat_;
 
-
+var numPart;
 
 
 function init(){
@@ -216,7 +216,8 @@ function updateDiv()
 
 function calling(){
   $("#messages").load(" #messages > *");
-  if(document.querySelectorAll("input:checked").length>0){
+  numPart=document.querySelectorAll("input:checked").length;
+  if(numPart>0){
     part=document.querySelectorAll("input:checked");
     var str;
     if(part.length===1){
@@ -273,6 +274,7 @@ function change(){
     tv=window.open("tv.html", "", "width=1453,height=896");
     wall=window.open("wall.html", "", "width=1453,height=431");
     wall.myVariable = fire;
+    tv.numP = numPart;
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
     tv.close()
