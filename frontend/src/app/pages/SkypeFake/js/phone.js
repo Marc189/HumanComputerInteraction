@@ -148,19 +148,19 @@ function selectchat(name){
     case 'Marc Niemella':
       fire=chat_1;
       break;
-    case 'Traves Stolterfoht':
+    case 'Mar Clerencia':
       fire=chat_2;
       break;
     case 'Moritz Schelten':
       fire=chat_3;
       break;
-    case 'Dennis Buch':
+    case 'Izar Capel':
       fire=chat_4;
       break;
-    case 'Joshua Weidmann':
+    case 'Facu Nunez':
       fire=chat_5;
       break;
-    case 'Lorenz Glock':
+    case 'Carmen Ruiz':
       fire=chat_6;
       break;
     case 'Marina Gonzalez':
@@ -176,24 +176,6 @@ function selectchat(name){
 }
 
 
-function loaduser(){
-  $.ajax({
-    url: 'user.csv',
-    dataType: 'text',
-  }).done(successFunction);
-}
-
-function successFunction(data) {
-  var allRows = data.split(/\r?\n|\r/);
-  for (var singleRow = 0; singleRow < allRows.length-1; singleRow++) {
-    var rowCells = allRows[singleRow].split(',');
-    var us=[];
-    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-      us.push(rowCells[rowCell]);
-    }
-    user.push(us)
-  }
-}
 
 
 
@@ -251,7 +233,6 @@ function next(){
   if (document.getElementById('calling').style.display==="block"){
     document.getElementById('duringCall').style.display="block";
     document.getElementById('calling').style.display="none"
-    //document.getElementById('video').play();
   }
 }
 
@@ -370,8 +351,7 @@ function chat2(name){
   document.getElementById('type2').style.width= '200px';
   selectchat(name);
   init2();
-  scrollToBottom('messages2');
-
+  setTimeout("scrollToBottom('messages2')",1000);
 }
 function change2(id){
   var butt=document.getElementById(id);
@@ -447,14 +427,212 @@ function change3(){
     }
     document.getElementById('hang').style.marginLeft='5px';
     document.getElementById('vi').style.display="block";
+    showVideos()
 
   }else {
     document.getElementById('back').style.display="none";
     showCall();
   }
 }
+
+function showVideos() {
+    if (numPart === 1) {
+      document.getElementById('vi').innerHTML =
+        "<div id=\"one\" style=\"padding: 50px 0\">\n" +
+        "  <video id='one1' width=\"360\">\n" +
+        "    <source src=\"media/izar.mp4\">\n" +
+        "  </video>\n" +
+        "</div>";
+      document.getElementById("one1").play();
+    }
+    if (numPart === 2) {
+      document.getElementById('vi').innerHTML =
+        "          <div id=\"two\" style=\"padding: 5px 15px\">\n" +
+        "            <video id='two1' width=\"330\">\n" +
+        "              <source src=\"media/marina.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='two2' width=\"330\">\n" +
+        "              <source src=\"media/mar.mp4\">\n" +
+        "            </video>\n" +
+        "          </div>"
+      document.getElementById("two1").play();
+      setTimeout(function () {
+        document.getElementById("two2").play();
+      }, 12000);
+    }
+    if (numPart === 3) {
+      document.getElementById('vi').innerHTML =
+        "          <div id=\"three\" style=\"padding: 20px 80px\">\n" +
+        "            <video id='three1' width=\"200\">\n" +
+        "              <source src=\"media/marina.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='three2' width=\"200\">\n" +
+        "              <source src=\"media/mar.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='three3' width=\"200\">\n" +
+        "              <source src=\"media/carmen.mp4\">\n" +
+        "            </video>\n" +
+        "          </div>"
+      document.getElementById("three1").play();
+      setTimeout(function () {
+        document.getElementById("three2").play();
+      }, 12000);
+      setTimeout(function () {
+        document.getElementById("three3").play();
+      }, 22000);
+
+    }
+    if (numPart === 4) {
+      document.getElementById('vi').innerHTML =
+        "          <div id=\"four\" style=\"padding: 50px 3px\">\n" +
+        "            <video id='four1' width=\"175\">\n" +
+        "              <source src=\"media/marina.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='four2' width=\"175\">\n" +
+        "              <source src=\"media/mar.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='four3' width=\"175\">\n" +
+        "              <source src=\"media/carmen.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='four4' width=\"175\">\n" +
+        "              <source src=\"media/faku.mp4\">\n" +
+        "            </video>\n" +
+        "          </div>"
+      document.getElementById("four1").play();
+      setTimeout(function () {
+        document.getElementById("four2").play();
+      }, 12000);
+      setTimeout(function () {
+        document.getElementById("four3").play();
+      }, 22000);
+      setTimeout(function () {
+        document.getElementById("four4").play();
+      }, 26000);
+    }
+    if (numPart === 5) {
+      document.getElementById('vi').innerHTML =
+        "          <div id=\"five\" style=\"padding: 50px 3px\">\n" +
+        "            <video id='five1' width=\"175\">\n" +
+        "              <source src=\"media/marina.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='five2' width=\"175\">\n" +
+        "              <source src=\"media/mar.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='five3' width=\"175\">\n" +
+        "              <source src=\"media/carmen.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='five4' width=\"175\">\n" +
+        "              <source src=\"media/faku.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='five5' style=\"margin: 0 90px\" width=\"175\">\n" +
+        "              <source src=\"media/moritz.mp4\">\n" +
+        "            </video>\n" +
+        "          </div>"
+      document.getElementById("five1").play();
+      setTimeout(function () {
+        document.getElementById("five2").play();
+      }, 12000);
+      setTimeout(function () {
+        document.getElementById("five3").play();
+      }, 22000);
+      setTimeout(function () {
+        document.getElementById("five4").play();
+      }, 26000);
+      setTimeout(function () {
+        document.getElementById("five5").play();
+      }, 35000);
+
+    }
+    if (numPart === 6) {
+      document.getElementById('vi').innerHTML =
+        "          <div id=\"six\" style=\"padding: 30px 3px\">\n" +
+        "            <video id='six1' width=\"175\">\n" +
+        "              <source src=\"media/marina.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='six2' width=\"175\">\n" +
+        "              <source src=\"media/izar.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='six3' width=\"175\">\n" +
+        "              <source src=\"media/mar.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='six4' width=\"175\">\n" +
+        "              <source src=\"media/carmen.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='six5' width=\"175\">\n" +
+        "              <source src=\"media/faku.mp4\">\n" +
+        "            </video>\n" +
+        "            <video id='six6' width=\"175\">\n" +
+        "              <source src=\"media/moritz.mp4\">\n" +
+        "            </video>\n" +
+        "          </div>"
+      document.getElementById("six1").play();
+      setTimeout(function () {
+        document.getElementById("six2").play();
+      }, 12000);
+      setTimeout(function () {
+        document.getElementById("six3").play();
+      }, 18000);
+      setTimeout(function () {
+        document.getElementById("six4").play();
+      }, 28000);
+      setTimeout(function () {
+        document.getElementById("six5").play();
+      }, 32000);
+      setTimeout(function () {
+        document.getElementById("six6").play();
+      }, 41000);
+    }
+    if (numPart === 7) {
+      document.getElementById('vi').innerHTML =
+        "    <div id=\"seven\" style=\"padding: 5px 18px\">\n" +
+        "      <video id='seven1' width=\"160\">\n" +
+        "        <source src=\"media/marina.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven2' width=\"160\">\n" +
+        "        <source src=\"media/izar.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven3' width=\"160\">\n" +
+        "        <source src=\"media/mar.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven4' width=\"160\">\n" +
+        "        <source src=\"media/carmen.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven5' width=\"160\">\n" +
+        "        <source src=\"media/faku.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven6' width=\"160\">\n" +
+        "        <source src=\"media/moritz.mp4\">\n" +
+        "      </video>\n" +
+        "      <video id='seven7' style=\"margin: 0 82px\" width=\"160\">\n" +
+        "        <source src=\"media/carmenBeingCarmen.mp4\">\n" +
+        "      </video>\n" +
+        "    </div>"
+      document.getElementById("seven1").play();
+      setTimeout(function () {
+        document.getElementById("seven2").play();
+      }, 12000);
+      setTimeout(function () {
+        document.getElementById("seven3").play();
+      }, 18000);
+      setTimeout(function () {
+        document.getElementById("seven4").play();
+      }, 28000);
+      setTimeout(function () {
+        document.getElementById("seven5").play();
+      }, 32000);
+      setTimeout(function () {
+        document.getElementById("seven6").play();
+      }, 41000);
+      setTimeout(function () {
+        document.getElementById("seven7").play();
+      }, 45000);
+    }
+}
+
+
 function back(){
   if(document.getElementById('vi').style.display==='block'||document.getElementById('chat2').style.display=== 'block'){
+    if(document.getElementById('chat2').style.display=== 'block')document.getElementById('type').style.width= '250px';
     document.getElementById('back').style.display="none";
     document.getElementById('buttons').style.display='block';
     document.getElementById('keyboard').style.display='none';
@@ -462,7 +640,6 @@ function back(){
     document.getElementById('dat').style.display='none';
     document.getElementById('chat2').style.display= 'none';
     document.getElementById('send').style.display= 'none';
-    document.getElementById('type').style.width= '250px';
     if(vid){
       video();
       vid=false;
@@ -485,6 +662,7 @@ function showCall() {
   var main = document.getElementsByClassName('buttonmain');
   var sec = document.getElementsByClassName('buttonsec');
   if (sec[0].style.display === 'none') {
+    $("#vi").load(" #vi > *");
     document.getElementById('call').innerHTML = "Show Call"
     for (var i = 0; i < sec.length; i++) sec[i].style.display = 'inline-block';
     for (var i = 0; i < main.length; i++) {
@@ -708,15 +886,6 @@ function sign() {
     document.getElementById("error2").innerText = "Something is missing!";
   } else {
     user.push([uname,pwd,name,email,date]);
-    // var data= uname+","+pwd+","+name+","+email+","+date
-    // var xhttp = new XMLHttpRequest();
-    // xhttp.onload = function () {
-    //   if (xhttp.readyState === 4 && xhttp.status === 200) {
-    //     console.log(this.responseText);
-    //   }
-    // };
-    // xhttp.open('POST','Writer');
-    // xhttp.send(data);
     back3();
   }
 }

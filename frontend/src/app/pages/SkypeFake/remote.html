@@ -14,8 +14,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="js/phone.js"></script>
-  <script src="js/tv.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <title>SkypeFake</title>
 </head>
 <body onload="showChecked()">
@@ -80,26 +78,26 @@
           <input type="text" id="addName" style="display: none" placeholder="Name">
           <input type="text" id="addemail" style="display: none" placeholder="Email">
           <hr>
+          <input type="checkbox" id="person7" class="person" value="Marina Gonzalez">
+          <label for="person7"> Marina Gonzalez</label><br>
+          <hr>
+          <input type="checkbox" id="person2" class="person" value="Mar Clerencia">
+          <label for="person2"> Mar Clerencia</label><br>
+          <hr>
+          <input type="checkbox" id="person6" class="person" value="Carmen Ruiz">
+          <label for="person6"> Carmen Ruiz</label><br>
+          <hr>
+          <input type="checkbox" id="person4" class="person" value="Facu Nunez">
+          <label for="person4"> Facu Nunez</label><br>
+          <hr>
           <input type="checkbox" id="person1" class="person" value="Moritz Schelten">
           <label for="person1"> Moritz Schelten</label><br>
           <hr>
-          <input type="checkbox" id="person2" class="person" value="Traves Stolterfoht">
-          <label for="person2"> Traves Stolterfoht</label><br>
-          <hr>
-          <input type="checkbox" id="person3" class="person" value="Dennis Buch">
-          <label for="person3"> Dennis Buch</label><br>
-          <hr>
-          <input type="checkbox" id="person4" class="person" value="Joshua Weidmann">
-          <label for="person4"> Joshua Weidmann</label><br>
+          <input type="checkbox" id="person3" class="person" value="Izar Capel">
+          <label for="person3"> Izar Capel</label><br>
           <hr>
           <input type="checkbox" id="person5" class="person" value="Marc Niemella">
           <label for="person5"> Marc Niemella</label><br>
-          <hr>
-          <input type="checkbox" id="person6" class="person" value="Lorenz Glock">
-          <label for="person6"> Lorenz Glock</label><br>
-          <hr>
-          <input type="checkbox" id="person7" class="person" value="Marina Gonzalez">
-          <label for="person7"> Marina Gonzalez</label><br>
           <hr>
         </div>
         <div id="result" style="display: inline-block;margin-left: 15px"></div>
@@ -432,11 +430,7 @@
              style="width:18px;float: right;display: none;margin-right: 10px">
       </div>
       <div id="remote" style="display:block">
-        <div id="vi" style="height: 370px;display: none">
-          <video id="video" width="360" height="270">
-            <source src="media/WIN_20201123_16_11_19_Pro%20(3).mp4" type="video/mp4">
-          </video>
-        </div>
+        <div id="vi" style="height: 370px;display: none"></div>
         <div id="buttons" style="display: block">
           <div id="buttons2">
             <button class="buttonmain" id="hang" onclick="home()">Hang up</button>

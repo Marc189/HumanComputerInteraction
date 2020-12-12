@@ -243,3 +243,7 @@ p{
   scrollbar-width: none;  /* Firefox */
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
