@@ -220,6 +220,7 @@ function calling(){
   $("#messages").load(" #messages > *");
   numPart=document.querySelectorAll("input:checked").length;
   if(numPart>0){
+    document.getElementById('audio').play();
     part=document.querySelectorAll("input:checked");
     var str;
     if(part.length===1){
@@ -253,10 +254,12 @@ function next(){
   if (document.getElementById('calling').style.display==="block"){
     document.getElementById('duringCall').style.display="block";
     document.getElementById('calling').style.display="none"
+    document.getElementById('audio').pause();
   }
 }
 
 function home() {
+  document.getElementById('audio').pause();
   for(var i=0;i<part.length;i++)part[i].checked=false;
   showChecked();
   updateDiv()
@@ -930,6 +933,7 @@ function logIN() {
 
 function izarCalls(){
   back();
+  document.getElementById('audio').play();
   document.getElementById("names").innerText="Izar Capel is calling";
   document.getElementById('home').style.display="none";
   document.getElementById('calling').style.display="block";
