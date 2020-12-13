@@ -32,6 +32,11 @@ header {
   margin-right: auto;
 }
 
+#sevenParticipantsB{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #sixParticipants {
   height: 200px;
 }
@@ -72,21 +77,19 @@ header {
 
 .button1 {
   background-color: red;
-  margin-top: -100px;
+  margin-top: -85px;
   margin-left: 500px;
 }
 .button2 {
   background-color: darkgray;
-  margin-top: -100px;
+  margin-top: -85px;
   margin-left: 655px;
 }
 .button3 {
   background-color: darkgray;
-  margin-top: -100px;
+  margin-top: -85px;
   margin-left: 815px;
 }
-
-
 
 #one {
   z-index: -1;
@@ -280,6 +283,55 @@ header {
   position: absolute;
   top: 535px;
   left: 750px;
+  z-index: 1;
+  color: white;
+}
+#seventh1 {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  z-index: 1;
+  color: white;
+}
+#seventh2 {
+  position: absolute;
+  top: 5px;
+  left: 750px;
+  z-index: 1;
+  color: white;
+}
+#seventh3 {
+  position: absolute;
+  top: 205px;
+  left: 30px;
+  z-index: 1;
+  color: white;
+}
+#seventh4 {
+  position: absolute;
+  top: 205px;
+  left: 750px;
+  z-index: 1;
+  color: white;
+}
+#seventh5 {
+  position: absolute;
+  top: 400px;
+  left: 30px;
+  z-index: 1;
+  color: white;
+}
+#seventh6 {
+  position: absolute;
+  top: 400px;
+  left: 750px;
+  z-index: 1;
+  color: white;
+}
+#seventh7 {
+  position: absolute;
+  top: 595px;
+  left: 390px;
   z-index: 1;
   color: white;
 }
