@@ -5,7 +5,7 @@ var vid=false;
 var user=[
   ["Muster80","1234","Max Mustermann","m_muster@gmail.com","1980-10-03"],
   ["MF189","test","Marc Niemella","mfniemella@gmail.com","1999-09-18"],
-  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]
+//  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]
 ];
 
 var part;
@@ -102,6 +102,7 @@ function init(){
     html += "</p>";
 
     document.getElementById("messages").innerHTML += html;
+    scrollToBottom('messages');
   });
 }
 
@@ -115,6 +116,7 @@ function init2(){
     html += "</p>";
 
     document.getElementById('messages2').innerHTML += html
+    scrollToBottom('messages2');
   });
 }
 
@@ -242,7 +244,7 @@ function calling(){
     document.getElementById("names").innerText=str;
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
-    setTimeout("next()", 500);
+    setTimeout("next()", 5000);
     mic_vid();
   }
 }
@@ -913,10 +915,9 @@ function logIN() {
     }
   }
   document.getElementById('uname').innerText=usr;
-  //if (pwd2===pwd) {
-  if (true) {
-    document.getElementById('uname').innerText=usr;
-
+  // if (true) {
+  //   document.getElementById('uname').innerText=usr;
+  if (pwd2===pwd) {
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
     changeContacts();
