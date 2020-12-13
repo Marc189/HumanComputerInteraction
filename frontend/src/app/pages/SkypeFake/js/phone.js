@@ -215,7 +215,7 @@ function updateDiv()
   $("#calling").load(" #calling > *");
 }
 
-
+var callchat;
 function calling(){
   $("#messages").load(" #messages > *");
   numPart=document.querySelectorAll("input[class=person]:checked").length;
@@ -225,7 +225,7 @@ function calling(){
     var str;
     if(part.length===1){
       str="Calling "+part[0].value+"...";
-      selectchat(part[0].value);
+      callchat=selectchat(part[0].value);
     }
     else{
       str="Calling Group.."
@@ -238,7 +238,7 @@ function calling(){
         div2.innerText=part[i].value;
         div.appendChild(div2);
         document.getElementById('pict').appendChild(div);
-        selectchat('Group');
+        callchat=selectchat('Group');
       }
     }
     init();
@@ -278,7 +278,7 @@ function change(){
     document.getElementById('switch2').style.display = 'none';
     tv=window.open("tv.html", "", "width=1453,height=896");
     wall=window.open("wall.html", "", "width=1453,height=431");
-    wall.myVariable = fire;
+    wall.myVariable = callchat;
     tv.numP = numPart;
     if(document.getElementById('rec').style.display==="none") change3();
   }else {

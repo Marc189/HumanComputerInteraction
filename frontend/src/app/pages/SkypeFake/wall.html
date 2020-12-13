@@ -29,8 +29,9 @@
     var div = document.getElementById(id);
     div.scrollTop = 10000000000000000;
     setTimeout("scrollToBottom('messages')",200)
+    console.log(window.opener.callchat)
   }
-  window.opener.fire.database().ref("message").on("child_added", function (snapshot) {
+  window.opener.callchat.database().ref("message").on("child_added", function (snapshot) {
     var html = "";
     html += "<p>";
 
@@ -38,6 +39,7 @@
     html += "</p>";
 
     document.getElementById("messages").innerHTML += html;
+    console.log('vfd')
   });
 </script>
 </body>
