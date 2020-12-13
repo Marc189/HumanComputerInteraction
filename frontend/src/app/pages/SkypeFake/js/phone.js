@@ -634,7 +634,7 @@ function showVideos() {
         document.getElementById("six6").play();
       }, 41000);
     }
-    if (numPart === 7) {
+    if (numPart >= 7) {
       document.getElementById('vi').innerHTML =
         "    <div id=\"seven\" style=\"padding: 5px 18px;position: relative\">\n" +
         "      <video id='seven1' width=\"160\">\n" +
