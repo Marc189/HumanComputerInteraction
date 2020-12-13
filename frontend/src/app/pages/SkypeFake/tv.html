@@ -260,13 +260,17 @@
         </div>
       </div>
     </div>
-    <button id="closeTV" class="button button1" onclick="closeTV()">Hang up</button>
-    <button id="mute" class="button button2" onclick="closeTV()">Mute</button>
-    <button id="video" class="button button3" onclick="closeTV()">Video on</button>
+    <div id="mouseMove">
+      <button id="closeTV" class="button button1" onclick="closeTV()">Hang up</button>
+      <button id="mute" class="button button2" onclick="closeTV()">Mute</button>
+      <button id="video" class="button button3" onclick="closeTV()">Video on</button>
+    </div>
+
 
 
   </div>
   <script>
+
     var numP = window.opener.numPart;
 
     function showCheck() {
@@ -368,8 +372,25 @@
       document.getElementById("closeTV");
       this.close();
       drgd=true;
-
     }
+    var timedelay = 1;
+    function delayCheck()
+    {
+      if(timedelay == 5)
+      {
+        $('#mouseMove').fadeOut();
+        timedelay = 1;
+      }
+      timedelay = timedelay+1;
+    }
+    $(document).mousemove(function() {
+      $('#mouseMove').fadeIn();
+      timedelay = 1;
+      clearInterval(_delay);
+      _delay = setInterval(delayCheck, 500);
+    });
+    // page loads starts delay timer
+    _delay = setInterval(delayCheck, 500)
 
   </script>
 </div>
