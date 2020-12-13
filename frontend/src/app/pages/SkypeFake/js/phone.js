@@ -166,11 +166,11 @@ function selectchat(name){
     case 'Marina Gonzalez':
       fire=chat_7;
       break;
-    case 'Elon Musk':
-      fire=chat_8;
-      break;
     case 'Group':
       fire=chat_;
+      break;
+    default:
+      fire=chat_8;
   }
   return fire;
 }
@@ -237,6 +237,8 @@ function next(){
 }
 
 function home() {
+  for(var i=0;i<part.length;i++)part[i].checked=false;
+  showChecked();
   updateDiv()
   document.getElementById('calling').style.display="none";
   document.getElementById('duringCall').style.display="none";
@@ -352,8 +354,18 @@ function chat2(name){
   document.getElementById('send2').style.display= 'inline-block';
   document.getElementById('type2').style.width= '200px';
   selectchat(name);
-  init2();
-  setTimeout("scrollToBottom('messages2')",1000);
+  setTimeout("init2()",100);
+  setTimeout("scrollToBottom('messages2')",1100);
+}
+var dir=false;
+function directchat(){
+  dir=true;
+  document.getElementById("home").style.display="none";
+  document.getElementById("duringCall").style.display="block";
+  document.getElementById("participants").style.display="block";
+  document.getElementById("back").style.display="block";
+  document.getElementById('remote').style.display="none";
+
 }
 function change2(id){
   var butt=document.getElementById(id);
@@ -661,6 +673,20 @@ function showVideos() {
 
 
 function back(){
+  if(dir){
+    document.getElementById("home").style.display="block";
+    document.getElementById("duringCall").style.display="none";
+    document.getElementById("participants").style.display="none";
+    document.getElementById("back").style.display="none";
+    document.getElementById('remote').style.display="block";
+    document.getElementById('parti').style.display= 'block';
+    document.getElementById('chat3').style.display= 'none';
+    document.getElementById('send2').style.display= 'none';
+    document.getElementById('em2').style.display= "none";
+    document.getElementById('dat2').style.display="none";
+    document.getElementById('keyboard4').style.display="block";
+    dir=false;
+  }
   if(document.getElementById('vi').style.display==='block'||document.getElementById('chat2').style.display=== 'block'){
     if(document.getElementById('chat2').style.display=== 'block')document.getElementById('type').style.width= '250px';
     document.getElementById('back').style.display="none";
@@ -768,32 +794,43 @@ function icon(id) {
 function showChecked() {
   document.getElementById("result").innerText = document.querySelectorAll("input:checked").length + " Selected";
 }
+function check(){
+  document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});
+}
 
 function addContact() {
   document.getElementById('add').style.display = "inline-block";
   document.getElementById('addContact').style.display = "none";
   document.getElementById("addName").style.display = "block";
   document.getElementById("addemail").style.display = "block";
+  document.getElementById('checkbox').style.height="400px"
 
 }
 
 function add() {
   var newName = document.getElementById("addName").value;
+  var x=document.getElementsByClassName('person');
+  var p=document.querySelectorAll("input:checked");
   if (newName !== "") {
-    var nodeCheck = document.createElement("INPUT");
-    nodeCheck.type = "checkbox";
-    nodeCheck.setAttribute("class", "person");
-    var nodeLabel = document.createElement("LABEL");
-    var textnode = document.createTextNode(newName);
-    nodeCheck.appendChild(textnode);
-    nodeLabel.appendChild(textnode)
-    document.getElementById("checkbox").appendChild(nodeCheck);
-    document.getElementById("checkbox").appendChild(nodeLabel);
+    var nr=x.length+1;
+    var id="person"+nr;
+    document.getElementById("checkbox").innerHTML+=
+      "          <img src=\"media/clipart2499993.png\" class=\"chatIcon\" alt=\"Image\" width=\"30\" onclick=\"directchat();chat2('"+newName+"')\">\n" +
+      "          <input type=\"checkbox\" id=\""+id+"\" class=\"person\" value=\""+newName+"\">\n" +
+      "          <label for=\""+id+"\">"+newName+"</label><br>\n" +
+      "          <hr>"
+  }
+  for(var i=0;i<p.length;i++){
+    for(var z=0;z<x.length;z++){
+      if(p[i].value===x[z].value)x[z].checked=true;
+    }
   }
   document.getElementById('add').style.display = "none";
   document.getElementById('addContact').style.display = "inline-block";
   document.getElementById("addName").style.display = "none";
   document.getElementById("addemail").style.display = "none";
+  document.getElementById('checkbox').style.height="470px"
+  check();
 }
 
 function settings() {
@@ -858,27 +895,34 @@ function logIN() {
       document.getElementById('date').value=user[i][4];
     }
   }
+  document.getElementById('uname').innerText=usr;
   //if (pwd2===pwd) {
   if (true) {
+    document.getElementById('uname').innerText=usr;
+
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
     changeContacts();
     keyhide();
-    if(document.getElementById('uname').innerText==="Muster80"){
-      setTimeout("marcCalls()", 5000);
+    if(document.getElementById('uname').innerText==="MF189"){
+      setTimeout("izarCalls()", 5000);
     }
   } else document.getElementById('error').innerText = "Password or Username wrong!";
 }
 
-function marcCalls(){
-  document.getElementById("names").innerText="Marc Niemella is calling";
+function izarCalls(){
+  back();
+  document.getElementById("names").innerText="Izar Capel is calling";
   document.getElementById('home').style.display="none";
   document.getElementById('calling').style.display="block";
   document.getElementById('accept').style.display="inline-block";
   document.getElementById('hang2').style.width="150px";
   document.getElementById('hang2').style.margin="0";
-  document.getElementById('person5').checked=true;
+  document.getElementById('person3').checked=true;
   part=document.querySelectorAll("input:checked");
+  numPart=document.querySelectorAll("input:checked").length;
+  selectchat(part[0].value);
+  init();
   mic_vid();
 }
 
