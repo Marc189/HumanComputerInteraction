@@ -142,6 +142,24 @@ function sendMsgSingle() {
   scrollToBottom('messages2');
   return false;
 }
+window.addEventListener("message", (event) => {
+  if(event.data==="close"){
+    home();
+    wall.close();
+  }
+  if(event.data==="mute"){
+    if(document.getElementById('mute').innerText==="Mute"){
+      change2('mute');
+      icon('muteIcon')
+    }
+  }
+  if(event.data==="video"){
+    if(document.getElementById('vid').innerText==="Video Off"){
+      change2('vid');
+      video();
+    }
+  }
+}, false);
 
 function selectchat(name){
   switch (name) {
@@ -245,7 +263,6 @@ function home() {
   document.getElementById('home').style.display="block";
 }
 
-var drgd=false;
 var tv;
 var wall;
 function change(){

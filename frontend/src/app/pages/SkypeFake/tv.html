@@ -262,8 +262,8 @@
     </div>
     <div id="mouseMove">
       <button id="closeTV" class="button button1" onclick="closeTV()">Hang up</button>
-      <button id="mute" class="button button2" onclick="closeTV()">Mute</button>
-      <button id="video" class="button button3" onclick="closeTV()">Video on</button>
+      <button id="mute" class="button button2" onclick="muteAll()">Mute</button>
+      <button id="video" class="button button3" onclick="videoOff()">Video off</button>
     </div>
 
 
@@ -274,7 +274,6 @@
     var numP = window.opener.numPart;
 
     function showCheck() {
-      console.log(numP);
       if (numP === 1) {
         document.getElementById("oneParticipant").style.display = "block";
         document.getElementById("one1").play();
@@ -369,14 +368,21 @@
       }, 46000);
     }
     function closeTV() {
-      document.getElementById("closeTV");
       this.close();
-      drgd=true;
+      window.opener.postMessage('close');
     }
+    function muteAll() {
+      window.opener.postMessage('mute');
+    }
+    function videoOff() {
+      window.opener.postMessage('video');
+    }
+
     var timedelay = 1;
+    var _delay;
     function delayCheck()
     {
-      if(timedelay == 5)
+      if(timedelay === 5)
       {
         $('#mouseMove').fadeOut();
         timedelay = 1;
@@ -387,10 +393,10 @@
       $('#mouseMove').fadeIn();
       timedelay = 1;
       clearInterval(_delay);
-      _delay = setInterval(delayCheck, 500);
+      _delay = setInterval(delayCheck, 200);
     });
     // page loads starts delay timer
-    _delay = setInterval(delayCheck, 500)
+    _delay = setInterval(delayCheck, 200)
 
   </script>
 </div>
