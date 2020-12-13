@@ -950,6 +950,9 @@ function izarCalls(){
 function logout(){
   document.getElementById('login').style.display = "block";
   document.getElementById('home').style.display = "none";
+  document.getElementById('username').value="";
+  document.getElementById('pwd').value="";
+  document.getElementById('error').innerText="";
 }
 
 function changeContacts(){
