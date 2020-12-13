@@ -46,13 +46,45 @@ header {
   font-size: 30px;
 }
 
-#hi {
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   position: absolute;
-  margin-top: 700px;
-  margin-left: 400px;
-  color: red;
+  /*margin-top: -100px;*/
+  /*margin-left: 600px;*/
   z-index: 2;
+  /*height: 40px;*/
+  /*width: 130px;*/
 }
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button1 {
+  background-color: red; /* Green */
+  margin-top: -100px;
+  margin-left: 500px;
+}
+.button2 {
+  background-color: red; /* Green */
+  margin-top: -100px;
+  margin-left: 670px;
+}
+.button3 {
+  background-color: red; /* Green */
+  margin-top: -100px;
+  margin-left: 815px;
+}
+
+
 
 #one {
   z-index: -1;

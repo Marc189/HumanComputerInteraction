@@ -243,7 +243,7 @@ function home() {
   document.getElementById('home').style.display="block";
 }
 
-
+var drgd=false;
 var tv;
 var wall;
 function change(){
@@ -265,6 +265,8 @@ function change(){
     document.getElementById('switch').style.display = 'none';
   }
 }
+
+
 function chat(type){
   if(document.getElementById('videoElement').style.display==="inline-block"){
     video();

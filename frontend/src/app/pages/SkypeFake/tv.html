@@ -52,6 +52,8 @@
             Mar sadfasf
           </div>
         </div>
+        <div class="twoParticipantsB" style="background-color: #333333">
+        </div>
       </div>
     </div>
 
@@ -218,7 +220,6 @@
         </div>
       </div>
     </div>
-    <h1 id="hi">Test</h1>
 
     <div id="sevenParticipants" style="display: none">
       <div class="flex-container">
@@ -259,6 +260,11 @@
         </div>
       </div>
     </div>
+    <button id="closeTV" class="button button1" onclick="closeTV()">Hang up</button>
+    <button id="mute" class="button button2" onclick="closeTV()">Mute</button>
+    <button id="video" class="button button3" onclick="closeTV()">Video on</button>
+
+
   </div>
   <script>
     var numP = window.opener.numPart;
@@ -357,6 +363,12 @@
       setTimeout(function () {
         document.getElementById("seven7").play();
       }, 46000);
+    }
+    function closeTV() {
+      document.getElementById("closeTV");
+      this.close();
+      drgd=true;
+
     }
 
   </script>
