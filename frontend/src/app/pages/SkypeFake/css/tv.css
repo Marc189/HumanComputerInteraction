@@ -63,6 +63,7 @@ header {
   z-index: 2;
   /*height: 40px;*/
   /*width: 130px;*/
+  border-radius: 126px;
 }
 .button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
