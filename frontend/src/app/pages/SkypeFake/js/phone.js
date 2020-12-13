@@ -218,10 +218,10 @@ function updateDiv()
 
 function calling(){
   $("#messages").load(" #messages > *");
-  numPart=document.querySelectorAll("input:checked").length;
+  numPart=document.querySelectorAll("input[class=person]:checked").length;
   if(numPart>0){
     document.getElementById('audio').play();
-    part=document.querySelectorAll("input:checked");
+    part=document.querySelectorAll("input[class=person]:checked");
     var str;
     if(part.length===1){
       str="Calling "+part[0].value+"...";
@@ -279,7 +279,6 @@ function change(){
     tv=window.open("tv.html", "", "width=1453,height=896");
     wall=window.open("wall.html", "", "width=1453,height=431");
     wall.myVariable = fire;
-
     tv.numP = numPart;
     if(document.getElementById('rec').style.display==="none") change3();
   }else {
@@ -325,7 +324,7 @@ function chat(type){
       document.getElementById('type').style.width= '250px';
       break;
   }
-  if(document.querySelectorAll("input:checked").length===1){
+  if(document.querySelectorAll("input[class=person]:checked").length===1){
     document.getElementById('group').style.display="none";
     document.getElementById('name6').style.display= 'block';
     document.getElementById('name5').innerText=part[0].value;
@@ -814,7 +813,7 @@ function icon(id) {
 }
 
 function showChecked() {
-  document.getElementById("result").innerText = document.querySelectorAll("input:checked").length + " Selected";
+  document.getElementById("result").innerText = document.querySelectorAll("input[class=person]:checked").length + " Selected";
 }
 function check(){
   document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});
@@ -832,8 +831,8 @@ function addContact() {
 function add() {
   var newName = document.getElementById("addName").value;
   var x=document.getElementsByClassName('person');
-  var p=document.querySelectorAll("input:checked");
-  if (newName !== "") {
+  var p=document.querySelectorAll("input[class=person]:checked");
+  if (newName !== ""&&document.getElementById('addemail').value!=="") {
     var nr=x.length+1;
     var id="person"+nr;
     document.getElementById("checkbox").innerHTML+=
@@ -941,8 +940,8 @@ function izarCalls(){
   document.getElementById('hang2').style.width="150px";
   document.getElementById('hang2').style.margin="0";
   document.getElementById('person3').checked=true;
-  part=document.querySelectorAll("input:checked");
-  numPart=document.querySelectorAll("input:checked").length;
+  part=document.querySelectorAll("input[class=person]:checked");
+  numPart=document.querySelectorAll("input[class=person]:checked").length;
   selectchat(part[0].value);
   init();
   mic_vid();
@@ -969,8 +968,8 @@ function signin() {
   document.getElementById("s").style.display = "none";
   document.getElementById("back2").style.display = "block";
   document.getElementById("sig").style.display = "block";
+  document.getElementById('h1').style.marginBottom="20px";
   keyhide();
-
 }
 function sign() {
   var uname = document.getElementById("username2").value;
@@ -992,6 +991,7 @@ function back3() {
   document.getElementById("back2").style.display = "none";
   document.getElementById("sig").style.display = "none";
   document.getElementById("error2").innerText = "";
+  document.getElementById('h1').style.marginBottom="80px";
   keyhide();
 }
 

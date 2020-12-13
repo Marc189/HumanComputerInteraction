@@ -22,9 +22,8 @@
       SkypeFake
     </header>
     <div id="login" style="text-align: center">
-      <h1 class="display-4 font-weight-bold">Welcome on SkypeFake</h1>
+      <h1 id="h1" class="display-4 font-weight-bold" style="margin-bottom: 80px">Welcome on SkypeFake</h1>
       <img id="back2" src="media/left-arrow-key.png" style="width:20px;margin: 0 10px;cursor: pointer;display: none" onclick="back3()">
-      <br><br>
       <div id="lo" style="height: 450px">
         <h4 style="text-align: left;margin: 10px">Please login:</h4>
         <br><br>
@@ -71,7 +70,7 @@
         </div>
         <br>
         <div style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</div>
-        <img src="media/exit-logout-2857.png" style="width: 18px; display: inline-block; float: right;margin-right: 10px;margin-left: 10px;cursor: pointer" onclick="logout()">
+        <img src="media/exit-logout-2857.png" style="width: 18px; display: inline-block; float: right;margin-right: 10px;cursor: pointer" onclick="logout()">
         <div id="checkbox" style="font-size: 20px;height: 470px;width: 360px;overflow-y: auto">
           <hr>
           <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person7').value)">
@@ -441,7 +440,7 @@
             <button class="buttonmain" id="hang" onclick="home()">Hang up</button>
             <button class="buttonmain" id="mute" onclick="change2('mute');icon('muteIcon')">Mute</button>
             <button class="buttonmain" id="vid" onclick="change2('vid');video()">Video On</button>
-            <button class="buttonsec" id="part" onclick="partis()">Show Part.</button>
+            <button class="buttonsec" id="part" onclick="partis()">Participants</button>
             <button class="buttonsec" id="rec" onclick="change2('rec');icon('recIcon')">Record Screen</button>
             <button class="buttonsec" id="share" onclick="change2('share');icon('shareIcon')">Share Screen</button>
           </div>
