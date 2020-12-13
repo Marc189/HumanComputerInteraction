@@ -70,22 +70,20 @@ header {
 }
 
 .button1 {
-  background-color: red; /* Green */
-  margin-top: -100px;
+  background-color: red;
+  margin-top: -85px;
   margin-left: 500px;
 }
 .button2 {
-  background-color: red; /* Green */
-  margin-top: -100px;
+  background-color: lightblue;
+  margin-top: -85px;
   margin-left: 670px;
 }
 .button3 {
-  background-color: red; /* Green */
-  margin-top: -100px;
+  background-color: lightblue;
+  margin-top: -85px;
   margin-left: 815px;
 }
-
-
 
 #one {
   z-index: -1;
