@@ -16,7 +16,7 @@
   <script src="js/phone.js"></script>
   <title>SkypeFake</title>
 </head>
-<body onload="showChecked()">
+<body onload="showChecked();check()">
   <div id="phone">
     <header>
       SkypeFake
@@ -70,38 +70,45 @@
           <button id="setB" class="button" onclick="settings()" style="float: right">Settings</button>
         </div>
         <br>
-        <!--        <button id="add" class="button" onclick="add()" style="display:none">Add</button>-->
-        <!--        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block">Add contact</button>-->
         <div style="font-size: 15px;display: inline-block;margin-left: 10px">Contacts:</div>
         <img src="media/exit-logout-2857.png" style="width: 18px; display: inline-block; float: right;margin-right: 10px;cursor: pointer" onclick="logout()">
         <div id="checkbox" style="font-size: 20px;height: 470px;width: 360px;overflow-y: auto">
-          <input type="text" id="addName" style="display: none" placeholder="Name">
-          <input type="text" id="addemail" style="display: none" placeholder="Email">
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person7').value)">
           <input type="checkbox" id="person7" class="person" value="Marina Gonzalez">
           <label for="person7"> Marina Gonzalez</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person2').value)">
           <input type="checkbox" id="person2" class="person" value="Mar Clerencia">
           <label for="person2"> Mar Clerencia</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person6').value)">
           <input type="checkbox" id="person6" class="person" value="Carmen Ruiz">
           <label for="person6"> Carmen Ruiz</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person4').value)">
           <input type="checkbox" id="person4" class="person" value="Facu Nunez">
           <label for="person4"> Facu Nunez</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person1').value)">
           <input type="checkbox" id="person1" class="person" value="Moritz Schelten">
           <label for="person1"> Moritz Schelten</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person3').value)">
           <input type="checkbox" id="person3" class="person" value="Izar Capel">
           <label for="person3"> Izar Capel</label><br>
           <hr>
+          <img src="media/clipart2499993.png" class="chatIcon" alt="Image" width="30" onclick="directchat();chat2(document.getElementById('person5').value)">
           <input type="checkbox" id="person5" class="person" value="Marc Niemella">
           <label for="person5"> Marc Niemella</label><br>
           <hr>
         </div>
+        <input type="text" id="addName" style="display: none;margin-top: 8px" placeholder="Name">
+        <input type="text" id="addemail" style="display: none" placeholder="Email">
         <div id="result" style="display: inline-block;margin-left: 15px"></div>
         <button class="button" id="sCall" style="display: inline-block" onclick="calling()">Start Call</button>
+        <button id="add" class="button" onclick="add()" style="display:none;margin: 40px 10px 0 0">Add</button>
+        <button id="addContact" class="button" onclick="addContact()" style="display:inline-block;margin: 40px 10px 0 0">Add contact</button>
       </div>
       <div id="sett" style="display: none">
         <img src="media/left-arrow-key.png" style="width:20px;margin: 10px;cursor: pointer" onclick="settings()">
@@ -405,9 +412,6 @@
         </div>
         <img id="keyboard3" src="media/smartphone-keyboard-mobile-phone-keypad-vector-10930396.jpg" style="width: 100%; display: none">
       </div>
-      <script>
-        document.querySelectorAll("input[class=person]").forEach(i => {i.onclick = function () {showChecked();}});
-      </script>
     </div>
     <div id="calling" style="display:none; text-align: center">
       <div id="c" style="height: 590px">
