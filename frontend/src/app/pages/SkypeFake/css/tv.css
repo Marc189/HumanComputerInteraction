@@ -37,9 +37,9 @@ header {
   margin-right: auto;
 }
 
-#sixParticipants {
-  height: 200px;
-}
+/*#sixParticipants {*/
+/*  height: 200px;*/
+/*}*/
 
 .flex-container > div {
   background-color: #f1f1f1;
