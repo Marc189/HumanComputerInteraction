@@ -5,7 +5,7 @@ var vid=false;
 var user=[
   ["Muster80","1234","Max Mustermann","m_muster@gmail.com","1980-10-03"],
   ["MF189","test","Marc Niemella","mfniemella@gmail.com","1999-09-18"],
-  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]
+//  ["Trav","test","Traves Stolterfoht","travesmarlon@gmail.com","1900-01-01"]
 ];
 
 var part;
@@ -102,6 +102,7 @@ function init(){
     html += "</p>";
 
     document.getElementById("messages").innerHTML += html;
+    scrollToBottom('messages');
   });
 }
 
@@ -115,6 +116,7 @@ function init2(){
     html += "</p>";
 
     document.getElementById('messages2').innerHTML += html
+    scrollToBottom('messages2');
   });
 }
 
@@ -142,6 +144,24 @@ function sendMsgSingle() {
   scrollToBottom('messages2');
   return false;
 }
+window.addEventListener("message", (event) => {
+  if(event.data==="close"){
+    home();
+    wall.close();
+  }
+  if(event.data==="mute"){
+    if(document.getElementById('mute').innerText==="Mute"){
+      change2('mute');
+      icon('muteIcon')
+    }
+  }
+  if(event.data==="video"){
+    if(document.getElementById('vid').innerText==="Video Off"){
+      change2('vid');
+      video();
+    }
+  }
+}, false);
 
 function selectchat(name){
   switch (name) {
@@ -200,6 +220,7 @@ function calling(){
   $("#messages").load(" #messages > *");
   numPart=document.querySelectorAll("input:checked").length;
   if(numPart>0){
+    document.getElementById('audio').play();
     part=document.querySelectorAll("input:checked");
     var str;
     if(part.length===1){
@@ -224,7 +245,7 @@ function calling(){
     document.getElementById("names").innerText=str;
     document.getElementById('home').style.display="none";
     document.getElementById('calling').style.display="block";
-    setTimeout("next()", 500);
+    setTimeout("next()", 5000);
     mic_vid();
   }
 }
@@ -233,10 +254,12 @@ function next(){
   if (document.getElementById('calling').style.display==="block"){
     document.getElementById('duringCall').style.display="block";
     document.getElementById('calling').style.display="none"
+    document.getElementById('audio').pause();
   }
 }
 
 function home() {
+  document.getElementById('audio').pause();
   for(var i=0;i<part.length;i++)part[i].checked=false;
   showChecked();
   updateDiv()
@@ -245,7 +268,6 @@ function home() {
   document.getElementById('home').style.display="block";
 }
 
-var drgd=false;
 var tv;
 var wall;
 function change(){
@@ -617,7 +639,7 @@ function showVideos() {
         document.getElementById("six6").play();
       }, 41000);
     }
-    if (numPart === 7) {
+    if (numPart >= 7) {
       document.getElementById('vi').innerHTML =
         "    <div id=\"seven\" style=\"padding: 5px 18px;position: relative\">\n" +
         "      <video id='seven1' width=\"160\">\n" +
@@ -896,10 +918,9 @@ function logIN() {
     }
   }
   document.getElementById('uname').innerText=usr;
-  //if (pwd2===pwd) {
-  if (true) {
-    document.getElementById('uname').innerText=usr;
-
+  // if (true) {
+  //   document.getElementById('uname').innerText=usr;
+  if (pwd2===pwd) {
     document.getElementById('login').style.display = "none";
     document.getElementById('home').style.display = "block";
     changeContacts();
@@ -912,6 +933,7 @@ function logIN() {
 
 function izarCalls(){
   back();
+  document.getElementById('audio').play();
   document.getElementById("names").innerText="Izar Capel is calling";
   document.getElementById('home').style.display="none";
   document.getElementById('calling').style.display="block";

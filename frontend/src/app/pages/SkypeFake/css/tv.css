@@ -69,6 +69,7 @@ header {
   /*height: 40px;*/
   /*width: 130px;*/
   border-radius: 126px;
+  width: 130px;
 }
 
 .button2:active {
@@ -96,12 +97,12 @@ header {
   margin-left: 500px;
 }
 .button2 {
-  background-color: lightblue;
+  background-color: darkgray;
   margin-top: -85px;
-  margin-left: 670px;
+  margin-left: 655px;
 }
 .button3 {
-  background-color: lightblue;
+  background-color: darkgray;
   margin-top: -85px;
   margin-left: 815px;
 }
