@@ -386,22 +386,24 @@
         document.getElementById("seven7").play();
       }, 46000);
     }
+
     function closeTV() {
       document.getElementById("closeTV");
       this.close();
-      drgd=true;
+      drgd = true;
     }
+
     var timedelay = 1;
-    function delayCheck()
-    {
-      if(timedelay == 5)
-      {
+
+    function delayCheck() {
+      if (timedelay == 5) {
         $('#mouseMove').fadeOut();
         timedelay = 1;
       }
-      timedelay = timedelay+1;
+      timedelay = timedelay + 1;
     }
-    $(document).mousemove(function() {
+
+    $(document).mousemove(function () {
       $('#mouseMove').fadeIn();
       timedelay = 1;
       clearInterval(_delay);
